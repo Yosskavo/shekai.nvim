@@ -10,7 +10,16 @@ function M.setup()
         vim.api.nvim_set_hl(0, group, settings)
     end
 
-	-- require("shekai.autocmd").setup()
+	require("shekai.autocmd").setup()
+	local status_ok, lualine = pcall(require, "lualine")
+		if status_ok then
+			lualine.setup({
+				options = {
+					theme = require("shekai.lualine")
+				}
+			})
+		end
+
 end
 
 return M

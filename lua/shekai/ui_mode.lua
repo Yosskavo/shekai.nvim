@@ -1,5 +1,6 @@
 local M = {}
-local colors = require("core.theme.colors").my_colors
+local colors = require("shekai.colors").my_colors
+
 
 M.mode_colors =
 {

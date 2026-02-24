@@ -9,7 +9,7 @@ function M.setup()
     local function update_borders()
         local mode = vim.api.nvim_get_mode().mode
         local color = palette.mode_colors[mode] or palette.mode_colors['n']
-        local bg = palette.my_colors.bg_alt
+        local bg = require("shekai.colors").my_colors.bg_alt
 
         local targets = { "WinSeparator", "LazyGitBorder", "FloatBorder", "FloatTitle" }
         for _, name in ipairs(targets) do
@@ -30,7 +30,7 @@ function M.setup()
     update_borders()
 
     -- 2. Yank Highlight
-    vim.api.nvim_set_hl(0, "yankhl", { bg = palette.my_colors.orange_burnt, fg = "none" })
+    vim.api.nvim_set_hl(0, "yankhl", { bg = require("shekai.colors").my_colors.orange_burnt, fg = "none" })
     vim.api.nvim_create_autocmd("TextYankPost", {
         group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
         callback = function()
