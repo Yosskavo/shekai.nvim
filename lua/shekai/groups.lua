@@ -93,4 +93,28 @@ return {
 		-- 7. LUA SPECIFIC MEANING
 		["@constructor.lua"] = { fg = p.light_green },                      -- { table = "data" }
 		["@variable.member.lua"] = { fg = p.light_blue },                   -- table.field
+-- 1. GENERAL (Global elements)    -- 2. HYPER THEME (Project & File management)
+    DashboardProjectTitle     = { fg = p.gold, bold = true },
+    DashboardProjectTitleIcon = { fg = p.orange },
+    DashboardProjectIcon      = { fg = p.blue_accent },
+    DashboardMruTitle         = { fg = p.cyan, bold = true },
+    DashboardMruIcon          = { fg = p.cyan },
+    DashboardFiles            = { fg = p.fg_soft },
+    DashboardShortCutIcon     = { fg = p.red },
+
+    -- 3. DOOM THEME (Center menu / Actions)
+    DashboardDesc     = { fg = p.fg_main },         -- The text description
+    DashboardKey      = { fg = p.orange, bold = true }, -- The key inside the brackets
+    DashboardIcon     = { fg = p.blue_main },       -- The icon next to the description
+    DashboardShortCut = { fg = p.red, bold = true }, -- The shortcut hint
+
+    -- 4. YOUR CUSTOM OVERRIDES (From previous snippets)
+    -- These are the ones you call manually in your dashboard config
+    DashDescHl     = { fg = p.fg_faint, italic = true, bold = true },
+    DashIconFileHl = { fg = p.green_deep },
+    DashKeyFileHl  = { fg = p.green_main, bold = true },
+    DashIconGitHl  = { fg = p.orange },
+    DashKeyGitHl   = { fg = p.orange, bold = true },
+    DashIconQuitHl = { fg = p.red },
+    DashKeyQuitHl  = { fg = p.red, bold = true },
 }
