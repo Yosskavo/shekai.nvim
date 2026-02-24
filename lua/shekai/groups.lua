@@ -82,4 +82,15 @@ return {
     NotifyINFOTitle   = { bg = p.bg_alt, fg = p.fg_bright },
     NotifyDEBUGTitle  = { bg = p.bg_alt, fg = p.fg_bright },
     NotifyTRACETitle  = { bg = p.bg_alt, fg = p.fg_bright },
+	-- 5. C++ SPECIFIC MEANING
+		["@property.cpp"] = { fg = p.blue_accent },                         -- Class members
+		["@constructor.cpp"] = { fg = p.emerald, bold = true },             -- Object instantiation
+
+		-- 6. PYTHON SPECIFIC MEANING
+		["@function.decorator.python"] = { fg = p.gold, bold = true },      -- @property, @staticmethod
+		["@string.doc.python"] = { fg = p.fg_soft, italic = true },         -- Documentation strings
+
+		-- 7. LUA SPECIFIC MEANING
+		["@constructor.lua"] = { fg = p.light_green },                      -- { table = "data" }
+		["@variable.member.lua"] = { fg = p.light_blue },                   -- table.field
 }
