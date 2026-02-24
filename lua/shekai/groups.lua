@@ -117,4 +117,23 @@ return {
     DashKeyGitHl   = { fg = p.orange, bold = true },
     DashIconQuitHl = { fg = p.red },
     DashKeyQuitHl  = { fg = p.red, bold = true },
+
+	-- here is for notify
+	NoiceCmdlinePopupBorder = {link = "FloatBorder" },
+
+	TodoBgFIX  = { bg = p.red, fg = p.bg_alt, bold = true },
+    TodoFgFIX  = { fg = p.red, bold = true },
+    TodoBgTODO = { bg = p.blue_accent, fg = p.bg_alt, bold = true },
+    TodoFgTODO = { fg = p.blue_accent, bold = true },
+    TodoBgHACK = { bg = p.orange, fg = p.bg_alt, bold = true },
+    TodoFgHACK = { fg = p.orange, bold = true },
+    TodoBgWARN = { bg = p.orange, fg = p.bg_alt, bold = true },
+    TodoFgWARN = { fg = p.orange, bold = true },
+    TodoBgPERF = { bg = p.purple_light, fg = p.bg_alt, bold = true },
+    TodoFgPERF = { fg = p.purple_light, bold = true },
+    TodoBgNOTE = { bg = p.emerald, fg = p.bg_alt, bold = true },
+    TodoFgNOTE = { fg = p.emerald, bold = true },
+    TodoBgTEST = { bg = p.blue_electric or p.violet, fg = p.bg_alt, bold = true },
+    TodoFgTEST = { fg = p.blue_electric or p.violet, bold = true },
+
 }
