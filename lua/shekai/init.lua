@@ -10,7 +10,7 @@ function M.setup()
         vim.api.nvim_set_hl(0, group, settings)
     end
 
-	require("shekai.autocmd").setup()
+	-- require("shekai.autocmd").setup()
 end
 
 return M
