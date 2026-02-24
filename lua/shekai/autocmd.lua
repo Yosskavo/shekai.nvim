@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-    local palette = require("my-theme.palette")
+    local palette = require("shekai.ui_mode")
 
     -- 1. Setup Mode-Changing Borders
     local border_group = vim.api.nvim_create_augroup("FloatBorderModeColor", { clear = true })
