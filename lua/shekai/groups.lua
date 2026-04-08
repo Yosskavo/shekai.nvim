@@ -6,7 +6,16 @@ local all_highlights = {}
 local modules = {
 	"normal",
 	"cursor",
-	"lang"
+	"lang",
+	"dash",
+	"telescope",
+	"buffer",
+	"diagnostic",
+	"lsp",
+	"noice",
+	"notify",
+	"todo",
+
 }
 
 for _, mod in ipairs(modules) do
