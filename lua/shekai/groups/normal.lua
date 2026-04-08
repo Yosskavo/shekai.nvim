@@ -6,7 +6,7 @@ local m = {
 	NormalFloat		= {link = "Normal"},
 	SignColumn		= {link = "Normal"},
 	Pmenu			= {fg = p.fg_muted, bg = p.bg_dim},
-    PmenuSel		= {fg = p.silver, bg = p.visual},
+    PmenuSel		= {fg = p.silver, bg = p.tan},
     PmenuSbar		= {fg = p.fg_soft, link = "Pmenu"},
     PmenuThumb		= {fg = p.fg_faint, link = "Pmenu"},
 }

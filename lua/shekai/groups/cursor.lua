@@ -9,7 +9,7 @@ local m =
 	Cursor			= {bg = p.selection, fg = p.fg},
 	CursorLine		= {bg = p.blur_overlay},
 	CursorColumn	= {bg = p.blur_overlay},
-	MatchParen		= {bg = p.silver, fg = p.naval_green, underline = true, bold = true},
+	MatchParen		= {bg = p.silver, fg = p.magenta_bright, underline = true, bold = true},
 	LineNr			= {fg = p.amber_soft},
 	CursorLineNr	= {fg = p.type_blue, bold = true},
 	LineNrAbove		= {fg = p.marine_fog, italic = true},
