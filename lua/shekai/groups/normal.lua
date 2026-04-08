@@ -1,7 +1,7 @@
 local p = require("shekai.colors").my_colors
 
 local m = {
-	Normal			= {fg = p.blue_sky, bg = p.bg_alt},
+	Normal			= {fg = p.light_silver, bg = p.bg_alt},
 	NormalNC		= {fg = p.blue_cyan, bg = p.bg},
 	NormalFloat		= {link = "Normal"},
 	SignColumn		= {link = "Normal"},
