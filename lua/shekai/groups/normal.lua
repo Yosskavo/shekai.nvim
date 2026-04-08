@@ -8,7 +8,7 @@ local m = {
 	Pmenu			= {fg = p.fg_muted, bg = p.bg_dim},
     PmenuSel		= {fg = p.silver, bg = p.visual},
     PmenuSbar		= {fg = p.fg_soft, link = "Pmenu"},
-    PmenuThumb		= {fg = p.fg_faint, "Pmenu"},
+    PmenuThumb		= {fg = p.fg_faint, link = "Pmenu"},
 }
 
 return m
