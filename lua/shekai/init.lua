@@ -7,7 +7,7 @@ function M.setup()
 
     local highlights = require("shekai.groups")
     for group, settings in pairs(highlights) do
-        vim.api.nvim_set_hl(0, tostring(group), settings)
+        vim.api.nvim_set_hl(0, group, settings)
     end
 
 	require("shekai.autocmd").setup()
