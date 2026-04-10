@@ -5,15 +5,15 @@ local m =
 	-- ==========================================
     -- NVIM-CMP (AUTOCOMPLETE MENU)
     -- ==========================================
-    
+
     -- 1. Base Text Elements
     CmpItemAbbr           = { fg = p.fg_main }, -- The standard text of the suggestion (e.g., the variable name)
     CmpItemAbbrDeprecated = { fg = p.fg_faint, strikethrough = true }, -- Suggestions that are deprecated/outdated (usually gets a strike-through line)
-    
+
     -- 2. Matching Characters (What you type vs What is suggested)
     CmpItemAbbrMatch      = { fg = p.blue_sky, bold = true }, -- The exact letters you typed that match the suggestion
     CmpItemAbbrMatchFuzzy = { fg = p.cyan, bold = true }, -- Letters matched by "fuzzy" searching (if you skip letters while typing)
-    
+
     -- 3. The "Menu" (Source Indicator)
     CmpItemMenu           = { fg = p.fg_soft, italic = true }, -- The text on the far right showing where the suggestion came from (e.g., "[LSP]", "[Buffer]", "[LuaSnip]")
 
@@ -25,7 +25,7 @@ local m =
     -- You can color specific icons differently so you can instantly
     -- tell if a suggestion is a Function, a Variable, or a Keyword!
     -- ==========================================
-    
+
     CmpItemKindText          = { fg = p.fg_soft },       -- Plain text suggestions
     CmpItemKindMethod        = { fg = p.light_yellow },  -- Class methods
     CmpItemKindFunction      = { fg = p.type_blue },     -- Standard functions
