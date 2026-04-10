@@ -6,7 +6,7 @@ local m =
     Boolean                = { fg = p.orange }, -- True/False values
     Conditional            = { fg = p.light_purple, bold = true, italic = true }, -- if, else, switch, etc.
     Repeat                 = { fg = p.light_purple, bold = true, italic = true }, -- for, while, do loops
-    ["@variable"]          = { fg = p.light_blue , blod = true}, -- Standard variable names
+    ["@variable"]          = { fg = p.light_blue , bold = true}, -- Standard variable names
     ["@variable.parameter"]= { fg = p.light_red}, -- Parameters passed into a function definition
     ["@type.builtin"]      = { fg = p.violet_glow }, -- Built-in standard types (int, float, str)
     Function               = { fg = p.type_blue }, -- Function definitions
