@@ -3,17 +3,17 @@ local p = require("shekai.colors").my_colors
 local m =
 {
 	Comment                = { fg = p.fg_faint, italic = true }, -- Standard code comments (//, #, --)
-    Boolean                = { fg = p.orange }, -- True/False values
+    Boolean                = { fg = p.deep_blood }, -- True/False values
     Conditional            = { fg = p.light_purple, bold = true, italic = true }, -- if, else, switch, etc.
     Repeat                 = { fg = p.light_purple, bold = true, italic = true }, -- for, while, do loops
     ["@variable"]          = { fg = p.light_blue , bold = true}, -- Standard variable names
     ["@variable.parameter"]= { fg = p.light_red}, -- Parameters passed into a function definition
     ["@type.builtin"]      = { fg = p.violet_glow }, -- Built-in standard types (int, float, str)
     Function               = { fg = p.type_blue }, -- Function definitions
-    String                 = { fg = p.light_orange }, -- String literals ("hello")
+    String                 = { fg = p.gold }, -- String literals ("hello")
     PreProc                = { fg = p.light_teal, bold = true }, -- Preprocessor directives (e.g., #include, #define)
     ["@keyword"]           = { fg = p.light_purple, bold = true, italic = true }, -- Language keywords (return, const, let)
-    ["@punctuation.bracket"] = { fg = p.light_green }, -- Brackets [], {}, ()
+    ["@punctuation.bracket"] = { fg = p.light_orange }, -- Brackets [], {}, ()
     Constant               = { fg = p.peach_light }, -- Constant values or ALL_CAPS variables
     Type                   = { fg = p.blue_mid, italic = true }, -- Custom types, classes, structs
     ["@operator"]          = { fg = p.violet }, -- Math and logic operators (+, -, ==, &&)
