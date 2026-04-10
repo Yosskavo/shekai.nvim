@@ -11,7 +11,7 @@ local modules = {
 	"telescope",
 	"buffer",
 	"diagnostic",
-	"lsp",
+	"cmp",
 	"noice",
 	"notify",
 	"todo",
