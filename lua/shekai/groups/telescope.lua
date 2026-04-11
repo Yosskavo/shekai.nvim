@@ -1,6 +1,6 @@
 local p = require("shekai.colors").my_colors
 
-local m = 
+local m =
 {
 	TelescopeBorder       = { fg = p.marine_mist, bg = p.bg_alt }, -- Outer border of the Telescope window
     TelescopePromptBorder = { fg = p.blue_main, bg = p.bg_dim }, -- Border specifically around the search input box
