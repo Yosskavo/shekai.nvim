@@ -3,7 +3,7 @@ local p = require("shekai.colors").my_colors
 local m =
 {
 	Comment                = { fg = p.fg_faint, italic = true }, -- Standard code comments (//, #, --)
-    Boolean                = { fg = p.deep_blood }, -- True/False values
+    Boolean                = { fg = p.red }, -- True/False values
     Conditional            = { fg = p.light_purple, bold = true, italic = true }, -- if, else, switch, etc.
     Repeat                 = { fg = p.light_purple, bold = true, italic = true }, -- for, while, do loops
     ["@variable"]          = { fg = p.light_blue , bold = true}, -- Standard variable names
