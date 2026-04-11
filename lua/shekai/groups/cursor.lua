@@ -5,7 +5,7 @@ local m =
 	Search			= {bg = p.yellow, fg = p.marine_deep},
 	IncSearch		= {bg = p.orange, fg = p.marine_ink, bold = true},
 	Substitute		= {bg = p.deep_blood, fg = p.marine_ink, bold = true},
-	Visual			= {bg = p.purple_tokyo, fg = p.blue_mid, bold = true},
+	Visual			= {bg = p.purple_tokyo, fg = p.bg_dim, bold = true},
 	Cursor			= {bg = p.selection, fg = p.fg},
 	CursorLine		= {bg = p.blur_overlay},
 	CursorColumn	= {bg = p.blur_overlay},
