@@ -15,6 +15,7 @@ local modules = {
 	"noice",
 	"notify",
 	"todo",
+	"md",
 }
 
 for _, mod in ipairs(modules) do
