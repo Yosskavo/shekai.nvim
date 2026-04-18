@@ -34,7 +34,7 @@ local m =
     BufferLineSeparator         = { fg = p.bg_dim, bg = p.bg_dim },
 
     -- 4. ACTIVE TAB INDICATOR
-    -- BufferLineIndicatorSelected = { fg = p.ice_blue, bg = p.bg_alt },
+    BufferLineIndicatorSelected = { fg = p.purple_tokyo, bg = p.bg_alt },
     BufferLineIndicatorVisible  = { fg = p.ice_blue, bg = p.bg_dim },
 
     -- 5. CLOSE BUTTONS
