@@ -7,7 +7,7 @@ local m = {
 	SignColumn		= {link = "Normal"},
 	Pmenu			= {fg = p.fg_muted, bg = p.bg_alt},
     PmenuSel		= {fg = p.gold, bg = p.selection},
-    PmenuSbar		= {fg = p.fg_soft, link = "Pmenu"},
+    PmenuSbar		= {fg = p.fg_soft, bg = p.blue_accent},
     PmenuThumb		= {fg = p.fg_faint, link = "Pmenu"},
 }
 

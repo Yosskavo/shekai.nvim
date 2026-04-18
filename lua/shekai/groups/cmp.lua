@@ -25,7 +25,6 @@ local m =
     -- You can color specific icons differently so you can instantly
     -- tell if a suggestion is a Function, a Variable, or a Keyword!
     -- ==========================================
-
     CmpItemKindText          = { fg = p.fg_soft },       -- Plain text suggestions
     CmpItemKindMethod        = { fg = p.light_yellow },  -- Class methods
     CmpItemKindFunction      = { fg = p.type_blue },     -- Standard functions
