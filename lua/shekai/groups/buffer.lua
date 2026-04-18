@@ -19,41 +19,40 @@ local m =
 	-- bufferline handler --
 
 	BufferLineBufferSelected = { fg = p.fg_bright, bg = p.marine_deep, bold = true },
-    BufferLineIndicatorSelected = { fg = p.ice_blue, bg = p.marine_deep },
-    -- Inactive tabs
-    BufferLineBackground = { fg = p.fg_muted, bg = p.marine_mist },
-    BufferLineBufferVisible = { fg = p.fg_soft, bg = p.marine_mist },
+    BufferLineBackground     = { fg = p.fg_muted,  bg = p.marine_mist },
 
-    -- The "Bleed" Fix (Separators)
-    BufferLineFill = { bg = p.bg_dim },
-    BufferLineSeparator = { fg = p.bg_dim, bg = p.marine_mist },
-    BufferLineSeparatorVisible = { fg = p.bg_dim, bg = p.marine_mist },
-    BufferLineSeparatorSelected = { fg = p.bg_dim, bg = p.marine_deep },
+    -- 2. THE SEPARATORS (To fix the "Bleeding" in the gaps)
+    -- These ensure the space between tabs matches your Shekai abyss
+    BufferLineFill               = { bg = p.bg_dim },
+    BufferLineSeparator          = { fg = p.bg_dim, bg = p.marine_mist },
+    BufferLineSeparatorVisible   = { fg = p.bg_dim, bg = p.marine_mist },
+    BufferLineSeparatorSelected  = { fg = p.bg_dim, bg = p.marine_deep },
+    BufferLineIndicatorSelected  = { fg = p.ice_blue, bg = p.marine_deep },
 
-    -- Pinned tabs
-    BufferLineDuplicateSelected = { fg = p.rose, bg = p.marine_deep },
-    BufferLineDuplicate = { fg = p.rose, bg = p.marine_mist },
-    BufferLineDuplicateVisible = { fg = p.rose, bg = p.marine_mist },
+    -- 3. INHERITED GROUPS (No 'bg' specified here)
+    -- These will automatically suck the background from the groups above
 
-    -- Diagnostics: ERROR
-    BufferLineErrorSelected = { fg = p.red, bg = p.marine_deep, bold = true },
-    BufferLineError = { fg = p.deep_blood, bg = p.marine_mist },
-    BufferLineErrorVisible = { fg = p.deep_blood, bg = p.marine_mist },
+    -- Icons and Text
+    BufferLineIconSelected       = { fg = p.type_blue },
+    BufferLineBufferVisible      = { fg = p.fg_soft },
+    
+    -- Diagnostics (Inherit BG, but keep Shekai glow for FG)
+    BufferLineErrorSelected      = { fg = p.red, bold = true },
+    BufferLineError              = { fg = p.deep_blood },
+    
+    BufferLineWarningSelected    = { fg = p.abyss_yellow_fg },
+    BufferLineWarning            = { fg = p.light_yellow },
+    
+    BufferLineHintSelected       = { fg = p.light_green },
+    BufferLineHint               = { fg = p.green_lime },
 
-    -- Diagnostics: HINT
-    BufferLineHintSelected = { fg = p.light_green, bg = p.marine_deep },
-    BufferLineHint = { fg = p.green_lime, bg = p.marine_mist },
-    BufferLineHintVisible = { fg = p.green_lime, bg = p.marine_mist },
+    -- Modified State
+    BufferLineModifiedSelected   = { fg = p.yellow },
+    BufferLineModified           = { fg = p.gold },
 
-    -- Diagnostics: WARN
-    BufferLineWarningSelected = { fg = p.abyss_yellow_fg, bg = p.marine_deep },
-    BufferLineWarning = { fg = p.light_yellow, bg = p.marine_mist },
-    BufferLineWarningVisible = { fg = p.light_yellow, bg = p.marine_mist },
-
-    -- Modified state
-    BufferLineModifiedSelected = { fg = p.yellow, bg = p.marine_deep },
-    BufferLineModified = { fg = p.gold, bg = p.marine_mist },
-    BufferLineModifiedVisible = { fg = p.gold, bg = p.marine_mist },
+    -- Pinned State
+    BufferLineDuplicateSelected  = { fg = p.rose },
+    BufferLineDuplicate          = { fg = p.rose },
 }
 
 return m
