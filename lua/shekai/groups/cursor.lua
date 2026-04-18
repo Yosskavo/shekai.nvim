@@ -2,8 +2,8 @@ local p = require("shekai.colors").my_colors
 
 local m =
 {
-	Search			= {bg = p.yellow, fg = p.marine_deep},
-	IncSearch		= {bg = p.orange, fg = p.marine_ink, bold = true},
+	Search			= {bg = p.blue_sky, fg = p.marine_deep},
+	IncSearch		= {bg = p.magenta_bright, fg = p.marine_ink, bold = true},
 	Substitute		= {bg = p.deep_blood, fg = p.marine_ink, bold = true},
 	Visual			= {bg = p.purple_tokyo, fg = p.bg_dim, bold = true},
 	Cursor			= {bg = p.selection, fg = p.fg},
