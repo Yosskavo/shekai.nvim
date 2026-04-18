@@ -11,7 +11,7 @@ function M.setup()
         local color = palette.mode_colors[mode] or palette.mode_colors['n']
         local bg = require("shekai.colors").my_colors.bg_alt
 
-        local targets = { "WinSeparator", "LazyGitBorder", "FloatBorder", "FloatTitle" }
+        local targets = { "WinSeparator", "LazyGitBorder", "FloatBorder", "FloatTitle", "BufferLineIndicatorSelected" }
         for _, name in ipairs(targets) do
             vim.api.nvim_set_hl(0, name, { fg = color, bg = bg, force = true })
         end
