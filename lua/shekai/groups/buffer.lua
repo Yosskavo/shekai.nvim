@@ -18,74 +18,81 @@ local m =
 
 	-- NOTE: bufferline handler --
 
-	-- 1. THE ONLY THREE WITH A BACKGROUND (Your Rule)
+	-- 1. BASE TABS
     BufferLineBufferSelected = { fg = p.fg_bright, bg = p.marine_deep, bold = true },
     BufferLineBufferVisible  = { fg = p.fg_soft,   bg = p.marine_mist },
     BufferLineBackground     = { fg = p.fg_muted,  bg = p.marine_mist },
+    BufferLineBuffer         = { fg = p.fg_muted,  bg = p.marine_mist }, -- Fallback
 
-    -- 2. THE EMPTY SPACE (Linked to your terminal background)
+    -- 2. THE EMPTY SPACE (The Abyss)
     BufferLineFill            = { link = "Normal" },
     BufferLineOffsetSeparator = { link = "Normal" },
 
-    -- 3. EVERYTHING ELSE HAS NO BACKGROUND (Foreground Only)
+    -- 3. SEPARATORS
+    BufferLineSeparatorSelected = { fg = p.bg_dim, bg = p.marine_deep },
+    BufferLineSeparatorVisible  = { fg = p.bg_dim, bg = p.marine_mist },
+    BufferLineSeparator         = { fg = p.bg_dim, bg = p.marine_mist },
+
+    -- 4. ACTIVE TAB INDICATOR
+    BufferLineIndicatorSelected = { fg = p.ice_blue, bg = p.marine_deep },
+    BufferLineIndicatorVisible  = { fg = p.ice_blue, bg = p.marine_mist },
+
+    -- 5. CLOSE BUTTONS
+    BufferLineCloseButtonSelected = { fg = p.fg_bright, bg = p.marine_deep },
+    BufferLineCloseButtonVisible  = { fg = p.fg_soft,   bg = p.marine_mist },
+    BufferLineCloseButton         = { fg = p.fg_muted,  bg = p.marine_mist },
+
+    -- 6. MODIFIED ICONS (The unsaved dot/plus)
+    BufferLineModifiedSelected = { fg = p.yellow, bg = p.marine_deep },
+    BufferLineModifiedVisible  = { fg = p.gold,   bg = p.marine_mist },
+    BufferLineModified         = { fg = p.gold,   bg = p.marine_mist },
+
+    -- 7. DUPLICATE/FOLDER NAMES (If files have the same name)
+    BufferLineDuplicateSelected = { fg = p.rose, bg = p.marine_deep },
+    BufferLineDuplicateVisible  = { fg = p.rose, bg = p.marine_mist },
+    BufferLineDuplicate         = { fg = p.rose, bg = p.marine_mist },
+
+    -- 8. ICONS (Forces the base icon groups to use your backgrounds)
+    BufferLineIconSelected = { bg = p.marine_deep },
+    BufferLineIconVisible  = { bg = p.marine_mist },
+    BufferLineIcon         = { bg = p.marine_mist },
+
+    -- ==========================================
+    -- 9. DIAGNOSTICS (This fixes the '1 (i)' gray boxes)
+    -- Bufferline splits these into 'Diagnostic' (text) and normal (icon)
+    -- ==========================================
     
-    -- Separators
-    BufferLineSeparatorSelected = { fg = p.bg_dim },
-    BufferLineSeparatorVisible  = { fg = p.bg_dim },
-    BufferLineSeparator         = { fg = p.bg_dim },
+    -- Errors
+    BufferLineErrorSelected           = { fg = p.red,        bg = p.marine_deep, bold = true },
+    BufferLineErrorDiagnosticSelected = { fg = p.red,        bg = p.marine_deep, bold = true },
+    BufferLineErrorVisible            = { fg = p.deep_blood, bg = p.marine_mist },
+    BufferLineErrorDiagnosticVisible  = { fg = p.deep_blood, bg = p.marine_mist },
+    BufferLineError                   = { fg = p.deep_blood, bg = p.marine_mist },
+    BufferLineErrorDiagnostic         = { fg = p.deep_blood, bg = p.marine_mist },
 
-    -- Active Tab Indicator
-    BufferLineIndicatorSelected = { fg = p.ice_blue },
-    BufferLineIndicatorVisible  = { fg = p.ice_blue },
+    -- Warnings
+    BufferLineWarningSelected           = { fg = p.abyss_yellow_fg, bg = p.marine_deep },
+    BufferLineWarningDiagnosticSelected = { fg = p.abyss_yellow_fg, bg = p.marine_deep },
+    BufferLineWarningVisible            = { fg = p.light_yellow,    bg = p.marine_mist },
+    BufferLineWarningDiagnosticVisible  = { fg = p.light_yellow,    bg = p.marine_mist },
+    BufferLineWarning                   = { fg = p.light_yellow,    bg = p.marine_mist },
+    BufferLineWarningDiagnostic         = { fg = p.light_yellow,    bg = p.marine_mist },
 
-    -- Close Buttons
-    BufferLineCloseButtonSelected = { fg = p.fg_bright },
-    BufferLineCloseButtonVisible  = { fg = p.fg_soft },
-    BufferLineCloseButton         = { fg = p.fg_muted },
+    -- Infos
+    BufferLineInfoSelected           = { fg = p.green_lime, bg = p.marine_deep },
+    BufferLineInfoDiagnosticSelected = { fg = p.green_lime, bg = p.marine_deep },
+    BufferLineInfoVisible            = { fg = p.green_lime, bg = p.marine_mist },
+    BufferLineInfoDiagnosticVisible  = { fg = p.green_lime, bg = p.marine_mist },
+    BufferLineInfo                   = { fg = p.green_lime, bg = p.marine_mist },
+    BufferLineInfoDiagnostic         = { fg = p.green_lime, bg = p.marine_mist },
 
-    -- Modified Icons (Unsaved changes)
-    BufferLineModifiedSelected = { fg = p.yellow },
-    BufferLineModifiedVisible  = { fg = p.gold },
-    BufferLineModified         = { fg = p.gold },
-
-    -- Duplicate File Names
-    BufferLineDuplicateSelected = { fg = p.rose },
-    BufferLineDuplicateVisible  = { fg = p.rose },
-    BufferLineDuplicate         = { fg = p.rose },
-
-    -- Base Icons
-    BufferLineIconSelected = { fg = p.type_blue },
-    BufferLineIconVisible  = { fg = p.fg_soft },
-    BufferLineIcon         = { fg = p.fg_muted },
-
-    -- Diagnostics
-    BufferLineErrorSelected           = { fg = p.red, bold = true },
-    BufferLineErrorDiagnosticSelected = { fg = p.red, bold = true },
-    BufferLineErrorVisible            = { fg = p.deep_blood },
-    BufferLineErrorDiagnosticVisible  = { fg = p.deep_blood },
-    BufferLineError                   = { fg = p.deep_blood },
-    BufferLineErrorDiagnostic         = { fg = p.deep_blood },
-
-    BufferLineWarningSelected           = { fg = p.abyss_yellow_fg },
-    BufferLineWarningDiagnosticSelected = { fg = p.abyss_yellow_fg },
-    BufferLineWarningVisible            = { fg = p.light_yellow },
-    BufferLineWarningDiagnosticVisible  = { fg = p.light_yellow },
-    BufferLineWarning                   = { fg = p.light_yellow },
-    BufferLineWarningDiagnostic         = { fg = p.light_yellow },
-
-    BufferLineInfoSelected           = { fg = p.green_lime },
-    BufferLineInfoDiagnosticSelected = { fg = p.green_lime },
-    BufferLineInfoVisible            = { fg = p.green_lime },
-    BufferLineInfoDiagnosticVisible  = { fg = p.green_lime },
-    BufferLineInfo                   = { fg = p.green_lime },
-    BufferLineInfoDiagnostic         = { fg = p.green_lime },
-
-    BufferLineHintSelected           = { fg = p.light_green },
-    BufferLineHintDiagnosticSelected = { fg = p.light_green },
-    BufferLineHintVisible            = { fg = p.green_lime },
-    BufferLineHintDiagnosticVisible  = { fg = p.green_lime },
-    BufferLineHint                   = { fg = p.green_lime },
-    BufferLineHintDiagnostic         = { fg = p.green_lime },
+    -- Hints
+    BufferLineHintSelected           = { fg = p.light_green, bg = p.marine_deep },
+    BufferLineHintDiagnosticSelected = { fg = p.light_green, bg = p.marine_deep },
+    BufferLineHintVisible            = { fg = p.green_lime,  bg = p.marine_mist },
+    BufferLineHintDiagnosticVisible  = { fg = p.green_lime,  bg = p.marine_mist },
+    BufferLineHint                   = { fg = p.green_lime,  bg = p.marine_mist },
+    BufferLineHintDiagnostic         = { fg = p.green_lime,  bg = p.marine_mist },
 }
 
 return m
