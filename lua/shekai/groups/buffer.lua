@@ -18,8 +18,8 @@ local m =
 
 	-- bufferline handler --
 
-	BufferLineBufferSelected = { fg = p.fg_bright, bg = p.magenta, bold = true },
-    BufferLineBackground     = { fg = p.fg_muted,  bg = p.green_lime },
+	BufferLineBufferSelected = { fg = p.fg_bright, bg = p.bg_alt, bold = true },
+    BufferLineBackground     = { fg = p.fg_muted,  bg = p.bg_dim },
 
     -- 2. THE SEPARATORS (To fix the "Bleeding" in the gaps)
     -- These ensure the space between tabs matches your Shekai abyss
