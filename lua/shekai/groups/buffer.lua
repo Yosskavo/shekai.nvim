@@ -23,7 +23,7 @@ local m =
 
     -- 2. THE SEPARATORS (To fix the "Bleeding" in the gaps)
     -- These ensure the space between tabs matches your Shekai abyss
-    BufferLineFill               = { bg = p.bg_dim },
+    BufferLineFill               = {},
     BufferLineSeparator          = { fg = p.bg_dim},
     BufferLineSeparatorVisible   = { fg = p.bg_dim},
     BufferLineSeparatorSelected  = { fg = p.bg_dim},
