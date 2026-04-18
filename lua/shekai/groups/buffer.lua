@@ -25,8 +25,8 @@ local m =
     BufferLineBuffer         = { fg = p.fg_muted,  bg = p.marine_mist }, -- Fallback
 
     -- 2. THE EMPTY SPACE (The Abyss)
-    BufferLineFill            = { link = "Normal" },
-    BufferLineOffsetSeparator = { link = "Normal" },
+    -- BufferLineFill            = { link = "Normal" },
+    -- BufferLineOffsetSeparator = { link = "Normal" },
 
     -- 3. SEPARATORS
     BufferLineSeparatorSelected = { fg = p.bg_dim, bg = p.marine_deep },
