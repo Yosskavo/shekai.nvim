@@ -47,9 +47,9 @@ local m =
 	  indicator_selected = { fg = p.ice_blue, bg = p.marine_deep },
 
 	  -- Separators
-	  separator = { fg = p.bg_dim, bg = p.marine_mist },
-	  separator_selected = { fg = p.bg_dim, bg = p.marine_deep },
-	  separator_visible = { fg = p.bg_dim, bg = p.marine_mist },
+	  separator = { fg = p.bg_dim},
+	  separator_selected = { fg = p.bg_dim},
+	  separator_visible = { fg = p.bg_dim},
 
 }
 
