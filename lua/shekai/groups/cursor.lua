@@ -2,11 +2,12 @@ local p = require("shekai.colors").my_colors
 
 local m =
 {
-	Search			= {bg = p.blue_sky, fg = p.marine_deep},
-	IncSearch		= {bg = p.magenta_bright, fg = p.marine_ink, bold = true},
+	Search			= {bg = p.peach, fg = p.marine_deep, italic = true},
+	IncSearch		= {bg = p.amber, fg = p.marine_ink, bold = true},
+	CurSearch       = {bg = p.orange_burnt, fg = p.rose, bold = true},
 	Substitute		= {bg = p.deep_blood, fg = p.marine_ink, bold = true},
 	Visual			= {bg = p.purple_tokyo, fg = p.bg_dim, bold = true},
-	Cursor			= {bg = p.selection, fg = p.fg},
+	Cursor			= {bg = p.fg, fg = p.selection},
 	CursorLine		= {bg = p.blur_overlay},
 	CursorColumn	= {bg = p.blur_overlay},
 	MatchParen		= {bg = p.silver, fg = p.magenta_bright, underline = true, bold = true},
