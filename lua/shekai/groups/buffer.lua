@@ -2,7 +2,7 @@ local p = require("shekai.colors").my_colors
 
 local m =
 {
-	-- this is for barbar --
+	-- NOTE: this is for barbar --
 	BufferCurrent      = { bg = p.marine_deep }, -- The currently active tab
     BufferVisible      = { bg = p.marine_mist }, -- Inactive tabs that are still visible
     BufferCurrentPin   = { fg = p.rose, bg = p.marine_deep }, -- Pinned tab (active)
@@ -16,43 +16,55 @@ local m =
     BufferVisibleWARN  = { fg = p.light_yellow, bg = p.marine_mist }, -- Inactive tab containing warnings
     BufferCurrentWARN  = { fg = p.abyss_yellow_fg, bg = p.marine_deep }, -- Active tab containing warnings
 
-	-- bufferline handler --
+	-- NOTE: bufferline handler --
 
-	BufferLineBufferSelected = { fg = p.fg_bright, bg = p.bg_alt, bold = true },
-    BufferLineBackground     = { fg = p.fg_muted,  bg = p.bg_dim },
+	-- 1. THE ONLY THREE GROUPS WITH A BACKGROUND
+    BufferLineBufferSelected = { fg = p.fg_bright, bg = p.marine_deep, bold = true },
+    BufferLineBufferVisible  = { fg = p.fg_soft,   bg = p.marine_mist },
+    BufferLineBackground     = { fg = p.fg_muted,  bg = p.marine_mist },
 
-    -- 2. THE SEPARATORS (To fix the "Bleeding" in the gaps)
-    -- These ensure the space between tabs matches your Shekai abyss
-    BufferLineFill               = {},
-    BufferLineSeparator          = { fg = p.bg_dim},
-    BufferLineSeparatorVisible   = { fg = p.bg_dim},
-    BufferLineSeparatorSelected  = { fg = p.bg_dim},
-    BufferLineIndicatorSelected  = { fg = p.ice_blue},
+    -- 2. EMPTY SPACE LINKED TO NORMAL
+    -- This handles the area where no buffers exist
+    BufferLineFill            = { link = "Normal" },
+    BufferLineOffsetSeparator = { link = "Normal" }, -- Keeps the space above Oil.nvim clean
 
-    -- 3. INHERITED GROUPS (No 'bg' specified here)
-    -- These will automatically suck the background from the groups above
+    -- 3. FOREGROUND ONLY (Transparent Backgrounds)
+    -- Separators
+    BufferLineSeparatorSelected = { fg = p.bg_dim },
+    BufferLineSeparatorVisible  = { fg = p.bg_dim },
+    BufferLineSeparator         = { fg = p.bg_dim },
 
-    -- Icons and Text
-    BufferLineIconSelected       = { fg = p.type_blue },
-    BufferLineBufferVisible      = { fg = p.fg_soft },
+    -- Active Indicators
+    BufferLineIndicatorSelected = { fg = p.ice_blue },
+    BufferLineIndicatorVisible  = { fg = p.ice_blue },
 
-    -- Diagnostics (Inherit BG, but keep Shekai glow for FG)
-    BufferLineErrorSelected      = { fg = p.red, bold = true },
-    BufferLineError              = { fg = p.deep_blood },
+    -- Modified Icons
+    BufferLineModifiedSelected  = { fg = p.yellow },
+    BufferLineModifiedVisible   = { fg = p.gold },
+    BufferLineModified          = { fg = p.gold },
 
-    BufferLineWarningSelected    = { fg = p.abyss_yellow_fg },
-    BufferLineWarning            = { fg = p.light_yellow },
+    -- Diagnostics (Errors/Warnings)
+    BufferLineErrorSelected     = { fg = p.red, bold = true },
+    BufferLineErrorVisible      = { fg = p.deep_blood },
+    BufferLineError             = { fg = p.deep_blood },
 
-    BufferLineHintSelected       = { fg = p.light_green },
-    BufferLineHint               = { fg = p.green_lime },
+    BufferLineWarningSelected   = { fg = p.abyss_yellow_fg },
+    BufferLineWarningVisible    = { fg = p.light_yellow },
+    BufferLineWarning           = { fg = p.light_yellow },
 
-    -- Modified State
-    BufferLineModifiedSelected   = { fg = p.yellow },
-    BufferLineModified           = { fg = p.gold },
+    BufferLineHintSelected      = { fg = p.light_green },
+    BufferLineHintVisible       = { fg = p.green_lime },
+    BufferLineHint              = { fg = p.green_lime },
 
-    -- Pinned State
-    BufferLineDuplicateSelected  = { fg = p.rose },
-    BufferLineDuplicate          = { fg = p.rose },
+    -- Duplicate File Names (Folder Paths)
+    BufferLineDuplicateSelected = { fg = p.rose },
+    BufferLineDuplicateVisible  = { fg = p.rose },
+    BufferLineDuplicate         = { fg = p.rose },
+    
+    -- Close Buttons
+    BufferLineCloseButtonSelected = { fg = p.fg_bright },
+    BufferLineCloseButtonVisible  = { fg = p.fg_soft },
+    BufferLineCloseButton         = { fg = p.fg_muted },
 }
 
 return m
