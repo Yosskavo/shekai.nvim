@@ -14,6 +14,7 @@ local m =
 	CursorLineNr	= {fg = p.type_blue, bold = true},
 	LineNrAbove		= {fg = p.marine_fog, italic = true},
 	LineNrBelow		= {fg = p.marine_fog, italic = true},
+	foldcolumn      = {fg = p.blue_accent, bold = true},
 }
 
 return m;
