@@ -20,7 +20,7 @@ local m =
     ["@property"]          = { fg = p.blue_main }, -- Object properties or struct members
     ["@spell"]             = { fg = p.fg_soft, italic = true }, -- Text that should be spell-checked (usually inside strings/comments)
     Statement              = { fg = p.gold, bold = true, italic = true, underline = true }, -- Standard statement keywords
-	Special                = { fg = p.magenta, bold = true },
+	Special                = { fg = p.plum_soft, bold = true },
 }
 
 
