@@ -25,8 +25,8 @@ local m =
     BufferLineBuffer         = { fg = p.fg_muted,  bg = p.marine_mist }, -- Fallback
 
     -- 2. THE EMPTY SPACE (The Abyss)
-    -- BufferLineFill            = { link = "Normal" },
-    -- BufferLineOffsetSeparator = { link = "Normal" },
+    BufferLineFill            = { link = "Normal" },
+    BufferLineOffsetSeparator = { link = "Normal" },
 
     -- 3. SEPARATORS
     BufferLineSeparatorSelected = { fg = p.bg_dim, bg = p.marine_deep },
@@ -53,9 +53,9 @@ local m =
     BufferLineDuplicate         = { fg = p.rose, bg = p.marine_mist },
 
     -- 8. ICONS (Forces the base icon groups to use your backgrounds)
-    BufferLineIconSelected = { bg = p.marine_deep },
-    BufferLineIconVisible  = { bg = p.marine_mist },
-    BufferLineIcon         = { bg = p.marine_mist },
+    BufferLineIconSelected = { bg = p.red },
+    BufferLineIconVisible  = { bg = p.red },
+    BufferLineIcon         = { bg = p.red },
 
     -- ==========================================
     -- 9. DIAGNOSTICS (This fixes the '1 (i)' gray boxes)
