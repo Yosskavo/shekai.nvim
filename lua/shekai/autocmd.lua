@@ -1,5 +1,6 @@
 local M = {}
 
+
 function M.setup()
     local palette = require("shekai.ui_mode")
 
