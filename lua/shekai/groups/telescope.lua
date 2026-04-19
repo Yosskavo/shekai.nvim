@@ -9,14 +9,14 @@ local m = {
     TelescopePromptNormal = { fg = p.fg_bright, bg = p.bg_alt },
     TelescopePromptBorder = { fg = p.amber }, -- Border matches BG
     TelescopePromptTitle  = { fg = p.purple_tokyo, bold = true },
-    TelescopePromptPrefix = { fg = p.fg_muted },    -- The '>' icon
+    TelescopePromptPrefix = { fg = p.purple_light },    -- The '>' icon
 
     -- ==========================================
     -- 2. THE RESULTS (The list of files)
     -- ==========================================
-    TelescopeResultsNormal = { fg = p.yellow },
+    TelescopeResultsNormal = { fg = p.silver },
     TelescopeResultsBorder = { fg = p.blue_accent }, -- Border matches BG
-    TelescopeResultsTitle  = { fg = p.purple_tokyo, bold = true },
+    TelescopeResultsTitle  = { fg = p.blue_sky, bold = true },
 
     -- ==========================================
     -- 3. THE PREVIEW (The file content on the right)
