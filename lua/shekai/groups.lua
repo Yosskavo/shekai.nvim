@@ -17,6 +17,7 @@ local modules = {
 	"todo",
 	"md",
 	"oil",
+	"flash"
 }
 
 for _, mod in ipairs(modules) do
