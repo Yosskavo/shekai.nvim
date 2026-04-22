@@ -7,7 +7,7 @@ local m =
 	CurSearch       = {bg = p.orange_burnt, fg = p.marine_ink, bold = true},
 	Substitute		= {bg = p.deep_blood, fg = p.marine_ink, bold = true},
 	Visual			= {bg = p.purple_tokyo, fg = p.bg_dim, bold = true},
-	Cursor			= {fg = p.marine_deep, bg = p.selection },
+	Cursor			= {fg = p.orange, bg = p.visual },
 	CursorLine		= {bg = p.blur_overlay},
 	CursorColumn	= {bg = p.blur_overlay},
 	MatchParen		= {bg = p.silver, fg = p.magenta_bright, underline = true, bold = true},
