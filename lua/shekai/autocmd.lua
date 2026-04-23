@@ -1,5 +1,6 @@
 local M = {}
 
+local p = require("shekai.colors").my_colors
 
 function M.setup()
     local palette = require("shekai.ui_mode")
@@ -31,7 +32,7 @@ function M.setup()
     update_borders()
 
     -- 2. Yank Highlight
-    vim.api.nvim_set_hl(0, "yankhl", { bg = require("shekai.colors").my_colors.orange_burnt, fg = "none" })
+    vim.api.nvim_set_hl(0, "yankhl", { bg = p.peach, fg = p.bg_alt, bold = true})
     vim.api.nvim_create_autocmd("TextYankPost", {
         group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
         callback = function()
