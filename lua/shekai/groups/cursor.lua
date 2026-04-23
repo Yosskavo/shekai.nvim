@@ -5,7 +5,7 @@ local m =
 	Search			= {bg = p.peach, fg = p.marine_deep, italic = true},
 	IncSearch		= {bg = p.amber, fg = p.marine_ink, bold = true},
 	CurSearch       = {bg = p.orange_burnt, fg = p.marine_ink, bold = true},
-	Substitute		= {bg = p.deep_blood, fg = p.marine_ink, bold = true},
+	Substitute		= {bg = p.red_deep, fg = p.marine_ink, bold = true},
 	Visual			= {bg = p.purple_tokyo, fg = p.bg_dim, bold = true},
 	Cursor			= {bg = p.visual, bold = true, italic = true, underline = true},
 	CursorLine		= {bg = p.blur_overlay},
@@ -16,8 +16,8 @@ local m =
 	LineNrAbove		= {fg = p.marine_fog, italic = true},
 	LineNrBelow		= {fg = p.marine_fog, italic = true},
 	foldcolumn      = {fg = p.blue_accent, bold = true},
-    TermCursor		= { fg = p.marine_deep, bg = p.green_lime },
-    TermCursorNC	= { fg = p.marine_deep, bg = p.fg_muted },
+    TermCursor		= {fg = p.marine_deep, bg = p.green_lime},
+    TermCursorNC	= {fg = p.marine_deep, bg = p.fg_muted},
 }
 
 return m;
