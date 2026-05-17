@@ -18,7 +18,8 @@ local modules = {
 	"md",
 	"oil",
 	"flash",
-	"msg"
+	"msg",
+	"which-key"
 }
 
 for _, mod in ipairs(modules) do
