@@ -16,6 +16,7 @@ local modules = {
 	"notify",
 	"todo",
 	"md",
+	"fzf",
 	"oil",
 	"neotree",
 	"flash",
