@@ -25,13 +25,14 @@ local m =
     Statement              = { fg = p.gold, bold = true, italic = true, underline = true }, -- Standard statement keywords
 	Special                = { fg = p.amber, bold = true },
 	-- NOTE: numbers
-	Number				   = { fg = p.emerald },
+	Number				   = { fg = p.gold , bold = true },
 	float				   = { fg = p.green_main },
     ["@constructor"]       = { fg = p.blue_sky }, -- Object creation: std::string(), new Class()
-	["@module"]            = { fg = p.module_light, italic = true }, -- Namespaces/Modules (std::, math.)
+	["@module"]            = { fg = p.tokyo_blue, italic = true }, -- Namespaces/Modules (std::, math.)
 	["@punctuation.delimiter"] = { fg = p.bracket_light }, -- Commas, semicolons, colons
     ["@string.escape"]         = { fg = p.tan , bold = true }, -- \n, \t, \0 inside strings
 	["@variable.member"]   = { fg = p.purple_tokyo, italic = true }, -- Modern Tree-sitter standard for struct/class fields
+	-- Delimiter
 }
 
 

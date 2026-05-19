@@ -50,6 +50,11 @@ M.my_colors = {
 	naval_green    = "#1f3d34",
 	abyss_blue     = "#081624",
 
+	-- tokyo blue
+	tokyo_blue = "#82aaff",
+	tokyo_cyan = "#86e1fc",
+	tokyo_mist = "#8ca0dc",
+
 	-- Greens (submerged, not fresh)
 	green_lime     = "#8fb573",
 	green_main     = "#6fa67a",
