@@ -50,6 +50,11 @@ M.my_colors = {
 	naval_green    = "#1f3d34",
 	abyss_blue     = "#081624",
 
+	-- tokyo blue
+	tokyo_blue = "#82aaff",
+	tokyo_cyan = "#86e1fc",
+	tokyo_mist = "#8ca0dc",
+
 	-- Greens (submerged, not fresh)
 	green_lime     = "#8fb573",
 	green_main     = "#6fa67a",
@@ -97,6 +102,12 @@ M.my_colors = {
 	amber_soft     = "#e0b68a",
 	peach_light    = "#dcb09a",
 
+-- Numbers & Constants Accents
+    tokyo_orange   = "#ff9e64", -- Soft glowing orange (Standard TN Numbers)
+    tokyo_gold     = "#e0af68", -- Muted elegant gold
+    gruvbox_gold   = "#fabd2f", -- Vibrant retro gold
+    gruvbox_orange = "#fe8019", -- Deep rust orange
+
 	-- Soft blues (subtle, for float windows, panels)
 	blue_soft        = "#7da7d9",  -- gentle, muted, readable
 	blue_mist        = "#86aedd",  -- light, slightly cool
@@ -127,6 +138,11 @@ M.my_colors = {
     light_silver   = "#c0c6e0",
     light_ice      = "#a6d0f5",
 
+-- Lighter accents for Structural Syntax
+    module_light   = "#8ce6eb", -- A bright, icy teal for namespaces (std::) and imports
+    punct_light    = "#a9b4d4", -- A crisp silver-blue for delimiters ( , : ; )
+    bracket_light  = "#f2cc96", -- A bright, soft amber for brackets ( {} [] () )
+    operator_light = "#a4b5f2", -- A soft luminous periwinkle for math/logic ( + - == )
 
 	-- the abyss
 	-- black

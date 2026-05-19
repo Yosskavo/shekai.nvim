@@ -19,7 +19,8 @@ local modules = {
 	"oil",
 	"neotree",
 	"flash",
-	"msg"
+	"msg",
+	"which-key"
 }
 
 for _, mod in ipairs(modules) do
