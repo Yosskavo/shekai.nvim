@@ -17,6 +17,7 @@ local modules = {
 	"todo",
 	"md",
 	"oil",
+	"neotree",
 	"flash",
 	"msg"
 }
