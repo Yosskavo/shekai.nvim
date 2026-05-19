@@ -127,6 +127,11 @@ M.my_colors = {
     light_silver   = "#c0c6e0",
     light_ice      = "#a6d0f5",
 
+-- Lighter accents for Structural Syntax
+    module_light   = "#8ce6eb", -- A bright, icy teal for namespaces (std::) and imports
+    punct_light    = "#a9b4d4", -- A crisp silver-blue for delimiters ( , : ; )
+    bracket_light  = "#f2cc96", -- A bright, soft amber for brackets ( {} [] () )
+    operator_light = "#a4b5f2", -- A soft luminous periwinkle for math/logic ( + - == )
 
 	-- the abyss
 	-- black
