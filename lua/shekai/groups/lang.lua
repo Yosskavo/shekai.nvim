@@ -32,7 +32,10 @@ local m =
 	["@punctuation.delimiter"] = { fg = p.bracket_light }, -- Commas, semicolons, colons
     ["@string.escape"]         = { fg = p.tokyo_gold , bold = true }, -- \n, \t, \0 inside strings
 	["@variable.member"]   = { fg = p.purple_tokyo, italic = true }, -- Modern Tree-sitter standard for struct/class fields
-	-- Delimiter
+	-- Method Definitions (e.g., void BitcoinExchange::myMethod() { ... })
+    ["@function.method"] = { fg = p.blue_soft, bold = true },
+    -- Method Calls (e.g., e.do_something(); )
+    ["@function.method.call"] = { fg = p.violet, italic = true },-- Delimiter
 }
 
 
