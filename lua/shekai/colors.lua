@@ -102,6 +102,12 @@ M.my_colors = {
 	amber_soft     = "#e0b68a",
 	peach_light    = "#dcb09a",
 
+-- Numbers & Constants Accents
+    tokyo_orange   = "#ff9e64", -- Soft glowing orange (Standard TN Numbers)
+    tokyo_gold     = "#e0af68", -- Muted elegant gold
+    gruvbox_gold   = "#fabd2f", -- Vibrant retro gold
+    gruvbox_orange = "#fe8019", -- Deep rust orange
+
 	-- Soft blues (subtle, for float windows, panels)
 	blue_soft        = "#7da7d9",  -- gentle, muted, readable
 	blue_mist        = "#86aedd",  -- light, slightly cool
