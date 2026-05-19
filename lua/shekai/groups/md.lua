@@ -4,21 +4,19 @@ local p = require("shekai.colors").my_colors
 local m = {
     -- ==========================================
     -- 1. HEADINGS (Text and Icons)
-    -- Creating a nice gradient of colors for hierarchy
+    -- A perfect TokyoNight to Gruvbox gradient hierarchy
     -- ==========================================
-    RenderMarkdownH1 = { fg = p.rose,       bold = true },
-    RenderMarkdownH2 = { fg = p.ice_blue,   bold = true },
-    RenderMarkdownH3 = { fg = p.gold,       bold = true },
-    RenderMarkdownH4 = { fg = p.green_lime, bold = true },
-    RenderMarkdownH5 = { fg = p.type_blue,  bold = true },
-    RenderMarkdownH6 = { fg = p.fg_muted,   bold = true },
+    RenderMarkdownH1 = { fg = p.purple_tokyo, bold = true }, -- Royal, distinct top-level
+    RenderMarkdownH2 = { fg = p.tokyo_blue,   bold = true }, -- Iconic moon blue
+    RenderMarkdownH3 = { fg = p.tokyo_cyan,   bold = true }, -- Icy cyan
+    RenderMarkdownH4 = { fg = p.green_main,   bold = true }, -- Grounded green
+    RenderMarkdownH5 = { fg = p.tokyo_gold,   bold = true }, -- Elegant muted gold
+    RenderMarkdownH6 = { fg = p.fg_muted,     bold = true }, -- Fades into the background
 
-	-- ==========================================
-    -- 2. HEADING BACKGROUNDS
     -- ==========================================
-    -- We use marine_deep here. This overrides the ugly default red/green Git Diff 
-    -- colors that the plugin tries to use, and replaces them with a sleek, 
-    -- dark blue block that stretches across the line.
+    -- 2. HEADING BACKGROUNDS
+    -- Keeping your sleek dark blue block design
+    -- ==========================================
     RenderMarkdownH1Bg = { bg = p.marine_deep },
     RenderMarkdownH2Bg = { bg = p.marine_deep },
     RenderMarkdownH3Bg = { bg = p.marine_deep },
@@ -29,59 +27,60 @@ local m = {
     -- ==========================================
     -- 3. CODE BLOCKS
     -- ==========================================
-    -- The main background for large code blocks. 
-    -- marine_deep gives it a nice subtle contrast against the abyss background.
-    RenderMarkdownCode         = { bg = p.marine_deep }, 
-    RenderMarkdownCodeBorder   = { fg = p.marine_mist, bg = p.marine_deep },
-    RenderMarkdownCodeInfo     = { fg = p.type_blue,   bg = p.marine_deep }, 
-    RenderMarkdownCodeFallback = { fg = p.fg_muted,    bg = p.marine_deep },
+    -- Main background for large code blocks. Using bg_alt here keeps it distinct 
+    -- from headings without overwhelming the screen with too much blue.
+    RenderMarkdownCode         = { bg = p.bg_alt }, 
+    RenderMarkdownCodeBorder   = { fg = p.marine_mist, bg = p.bg_alt },
+    RenderMarkdownCodeInfo     = { fg = p.tokyo_cyan,  bg = p.bg_alt }, 
+    RenderMarkdownCodeFallback = { fg = p.fg_muted,    bg = p.bg_alt },
 
-    -- Inline code (e.g., `like this`)
-    RenderMarkdownCodeInline   = { fg = p.yellow, bg = p.marine_deep },
-    RenderMarkdownInlineHighlight = { fg = p.fg_bright, bg = p.marine_deep },
+    -- Inline code (e.g., `like this`) pops out with Tokyo Orange
+    RenderMarkdownCodeInline      = { fg = p.tokyo_orange, bg = p.marine_deep },
+    RenderMarkdownInlineHighlight = { fg = p.fg_bright,    bg = p.selection },
 
     -- ==========================================
     -- 4. BLOCK QUOTES
+    -- Matches the heading hierarchy colors
     -- ==========================================
     RenderMarkdownQuote  = { fg = p.fg_muted, italic = true },
-    RenderMarkdownQuote1 = { fg = p.type_blue },
-    RenderMarkdownQuote2 = { fg = p.ice_blue },
-    RenderMarkdownQuote3 = { fg = p.gold },
-    RenderMarkdownQuote4 = { fg = p.green_lime },
-    RenderMarkdownQuote5 = { fg = p.rose },
+    RenderMarkdownQuote1 = { fg = p.purple_tokyo },
+    RenderMarkdownQuote2 = { fg = p.tokyo_blue },
+    RenderMarkdownQuote3 = { fg = p.tokyo_cyan },
+    RenderMarkdownQuote4 = { fg = p.green_main },
+    RenderMarkdownQuote5 = { fg = p.tokyo_gold },
     RenderMarkdownQuote6 = { fg = p.fg_muted },
 
     -- ==========================================
     -- 5. LISTS, CHECKBOXES & LINES
     -- ==========================================
-    RenderMarkdownBullet   = { fg = p.type_blue },
-    RenderMarkdownDash     = { fg = p.fg_muted }, -- Thematic breaks (---)
-    RenderMarkdownSign     = { bg = "NONE" },     -- Kills gray in the sign column
-    RenderMarkdownMath     = { fg = p.magenta_bright },
-    RenderMarkdownIndent   = { fg = p.marine_mist },
-    RenderMarkdownHtmlComment = { fg = p.fg_muted, italic = true },
+    RenderMarkdownBullet = { fg = p.tokyo_blue },
+    RenderMarkdownDash   = { fg = p.marine_mist }, -- Thematic breaks (---)
+    RenderMarkdownSign   = { bg = "NONE" },        -- Kills gray in the sign column
+    RenderMarkdownMath   = { fg = p.violet_glow },
+    RenderMarkdownIndent = { fg = p.marine_ink },  -- Very faint line for indents
+    RenderMarkdownHtmlComment = { fg = p.grey_comment, italic = true },
 
     -- Links
-    RenderMarkdownLink      = { fg = p.ice_blue },
-    RenderMarkdownLinkTitle = { fg = p.type_blue, underline = true },
-    RenderMarkdownWikiLink  = { fg = p.ice_blue, underline = true },
+    RenderMarkdownLink      = { fg = p.tokyo_blue, underline = true },
+    RenderMarkdownLinkTitle = { fg = p.tokyo_cyan, bold = true },
+    RenderMarkdownWikiLink  = { fg = p.purple_light, underline = true },
 
-    -- Checkboxes
+    -- Checkboxes (Using Gruvbox for contrast)
     RenderMarkdownUnchecked = { fg = p.fg_muted },
-    RenderMarkdownChecked   = { fg = p.green_lime },
-    RenderMarkdownTodo      = { fg = p.yellow },
+    RenderMarkdownChecked   = { fg = p.green_main },
+    RenderMarkdownTodo      = { fg = p.gruvbox_gold, bold = true },
 
     -- Tables
-    RenderMarkdownTableHead   = { fg = p.type_blue, bold = true },
-    RenderMarkdownTableRow    = { fg = p.fg_soft },
+    RenderMarkdownTableHead = { fg = p.tokyo_cyan, bold = true },
+    RenderMarkdownTableRow  = { fg = p.fg_soft },
 
     -- ==========================================
     -- 6. CALLOUTS (Alerts/Admonitions)
     -- ==========================================
-    RenderMarkdownSuccess = { fg = p.green_lime },
-    RenderMarkdownInfo    = { fg = p.type_blue },
-    RenderMarkdownHint    = { fg = p.light_green },
-    RenderMarkdownWarn    = { fg = p.yellow },
+    RenderMarkdownSuccess = { fg = p.green_main },
+    RenderMarkdownInfo    = { fg = p.tokyo_blue },
+    RenderMarkdownHint    = { fg = p.tokyo_cyan },
+    RenderMarkdownWarn    = { fg = p.gruvbox_orange },
     RenderMarkdownError   = { fg = p.red },
 }
 
