@@ -17,7 +17,7 @@ local m =
     Constant               = { fg = p.peach_light }, -- Constant values or ALL_CAPS variables
     Type                   = { fg = p.green_main, italic = true }, -- Custom types, classes, structs
     ["@operator"]          = { fg = p.violet }, -- Math and logic operators (+, -, ==, &&)
-    ["@_parent"]           = { fg = p.light_green }, -- Math and logic operators (+, -, ==, &&)
+    ["@_parent"]           = { fg = p.light_green, italic = true, priority = 200 }, -- Math and logic operators (+, -, ==, &&)
     ["@property"]          = { fg = p.blue_main }, -- Object properties or struct members
     ["@spell"]             = { fg = p.fg_soft, italic = true }, -- Text that should be spell-checked (usually inside strings/comments)
     Statement              = { fg = p.gold, bold = true, italic = true, underline = true }, -- Standard statement keywords
