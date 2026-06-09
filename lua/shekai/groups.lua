@@ -21,7 +21,8 @@ local modules = {
 	"neotree",
 	"flash",
 	"msg",
-	"which-key"
+	"which-key",
+	"man"
 }
 
 for _, mod in ipairs(modules) do
