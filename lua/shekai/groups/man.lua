@@ -12,9 +12,9 @@ local m =
     manOptionDesc        = { fg = p.tokyo_orange },                    -- Command line options/flags like -h, --help
 
     -- Text Formatting            
-    manBold              = { fg = p.fg_bright, bold = true },          -- General bolded text 
-    manUnderline         = { fg = p.blue_ice, underline = true },      -- Underlined text (often arguments)
-    manItalic            = { fg = p.fg_soft, italic = true },          -- Italicized text
+    manBold              = { fg = p.purple_tokyo, bold = true },          -- General bolded text 
+    manUnderline         = { fg = p.blue_accent, underline = true },      -- Underlined text (often arguments)
+    manItalic            = { fg = p.peach_light, italic = true },          -- Italicized text
 
     -- Fallbacks (Man pages often pely on these standard vim groups)
     Title                = { fg = p.tokyo_cyan, bold = true },
