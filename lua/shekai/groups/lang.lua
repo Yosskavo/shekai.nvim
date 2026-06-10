@@ -24,7 +24,6 @@ local m =
     ["@spell"]             = { fg = p.fg_soft, italic = true }, -- Text that should be spell-checked (usually inside strings/comments)
     Statement              = { fg = p.gold, bold = true, italic = true, underline = true }, -- Standard statement keywords
 	Special                = { fg = p.amber, bold = true },
-	-- NOTE: numbers
 	Number				   = { fg = p.tokyo_orange , bold = true },
 	float				   = { fg = p.gruvbox_orange, bold = true },
     ["@constructor"]       = { fg = p.blue_sky }, -- Object creation: std::string(), new Class()
