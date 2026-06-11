@@ -46,7 +46,7 @@ local m = {
     ["@spell"]                = { fg = p.fg_soft, italic = true },
     Special                   = { fg = p.amber, bold = true },
 	["@punctuation.special"]  = { fg = p.bracket_light },
-	["@nospell"]              = { fg = p.magenta, italic = true}
+	-- ["@nospell"]              = { fg = p.magenta, italic = true}
 }
 
 return m
