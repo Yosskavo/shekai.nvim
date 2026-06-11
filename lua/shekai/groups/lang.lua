@@ -45,7 +45,8 @@ local m = {
     Comment                   = { fg = p.fg_faint, italic = true },
     ["@spell"]                = { fg = p.fg_soft, italic = true },
     Special                   = { fg = p.amber, bold = true },
-	["@punctuation.special"]  = { fg = p.bracket_light }
+	["@punctuation.special"]  = { fg = p.bracket_light },
+	["@nospell"]              = { fg = p.magenta, italic = true}
 }
 
 return m
