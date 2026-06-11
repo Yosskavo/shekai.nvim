@@ -16,7 +16,7 @@
   <summary>Plug</summary>
 
 ```vim
-Plug 'stevearc/oil.nvim'
+Plug 'Yosskavo/shekai.nvim'
 ```
 
 </details>
