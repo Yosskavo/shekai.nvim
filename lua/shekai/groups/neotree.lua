@@ -3,8 +3,8 @@ local p = require("shekai.colors").my_colors
 
 local m =
 {
--- ==========================================
-    -- NEO-TREE HIGHLIGHTS
+	-- ==========================================
+    -- NEO-TREE HIGHLIGHTS					
     -- ==========================================
 
     -- 1. Base UI & Background
@@ -12,8 +12,8 @@ local m =
     NeoTreeNormalNC        = { fg = p.fg_soft, bg = p.bg_dim }, -- Sidebar background when unfocused
     NeoTreeCursorLine      = { bg = p.selection },              -- The line you are currently hovering over
     NeoTreeEndOfBuffer     = { fg = p.bg_dim, bg = p.bg_dim },  -- Hides the ~ at the bottom of the tree
-    NeoTreeFloatBorder     = { fg = p.blue_electric, bg = p.bg }, -- Border for Neo-tree floating popups
-    NeoTreeFloatTitle      = { fg = p.blue_sky, bold = true },  -- Title text for floating popups
+    -- NeoTreeFloatBorder     = { fg = p.blue_electric, bg = p.bg }, -- Border for Neo-tree floating popups
+    -- NeoTreeFloatTitle      = { fg = p.blue_sky, bold = true },  -- Title text for floating popups
 
     -- 2. Structure & Indentation
     NeoTreeIndentMarker    = { fg = p.grey_comment },           -- The vertical lines showing folder depth
