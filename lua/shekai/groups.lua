@@ -22,7 +22,8 @@ local modules = {
 	"flash",
 	"msg",
 	"which-key",
-	"man"
+	"man",
+	"glance"
 }
 
 for _, mod in ipairs(modules) do
