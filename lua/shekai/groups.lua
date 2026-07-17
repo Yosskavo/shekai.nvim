@@ -23,7 +23,8 @@ local modules = {
 	"msg",
 	"which-key",
 	"man",
-	"glance"
+	"glance",
+    "blink"
 }
 
 for _, mod in ipairs(modules) do
