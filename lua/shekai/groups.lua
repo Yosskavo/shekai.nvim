@@ -24,7 +24,8 @@ local modules = {
 	"which-key",
 	"man",
 	"glance",
-    "blink"
+    "blink",
+	"docker"
 }
 
 for _, mod in ipairs(modules) do
