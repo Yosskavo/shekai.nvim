@@ -15,14 +15,14 @@ local m = {
 
     -- ==========================================
     -- 2. HEADING BACKGROUNDS
-    -- Keeping your sleek dark blue block design
+    -- Thematic, low-luminance backgrounds matched to the foreground
     -- ==========================================
-    RenderMarkdownH1Bg = { bg = p.marine_deep },
-    RenderMarkdownH2Bg = { bg = p.marine_deep },
-    RenderMarkdownH3Bg = { bg = p.marine_deep },
-    RenderMarkdownH4Bg = { bg = p.marine_deep },
-    RenderMarkdownH5Bg = { bg = p.marine_deep },
-    RenderMarkdownH6Bg = { bg = p.marine_deep },
+    RenderMarkdownH1Bg = { bg = p.visual },        -- Deep purple-blue tint for H1
+    RenderMarkdownH2Bg = { bg = p.marine_deep },   -- Classic dark blue for H2
+    RenderMarkdownH3Bg = { bg = p.marine_teal },   -- Deep teal to compliment the cyan H3
+    RenderMarkdownH4Bg = { bg = p.naval_green },   -- Submerged green background for H4
+    RenderMarkdownH5Bg = { bg = p.selection },     -- Neutral elevated background for H5
+    RenderMarkdownH6Bg = { bg = p.bg_alt },        -- Barely raised above normal background
 
     -- ==========================================
     -- 3. CODE BLOCKS

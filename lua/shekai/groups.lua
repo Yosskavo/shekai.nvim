@@ -25,7 +25,10 @@ local modules = {
 	"man",
 	"glance",
     "blink",
-	"docker"
+	"docker",
+	"c",
+	"cpp",
+	"odin"
 }
 
 for _, mod in ipairs(modules) do
