@@ -3,8 +3,9 @@ return function(p, config)
 
 	local normal_bg = config.transparent and "NONE" or (config.blur and p.blur_bg or p.bg_alt)
 	local normal_nc_bg = config.transparent and "NONE" or (config.blur and p.blur_bg or p.bg)
-	local float_bg = config.transparent and (config.blur and p.blur_float or "NONE") or (config.blur and p.blur_float or p.bg_alt)
-	local pmenu_bg = config.blur and p.blur_float or p.bg_alt
+	local float_bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
+	local pmenu_bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
+
 
 	return {
 		Normal			= { fg = p.light_silver, bg = normal_bg },

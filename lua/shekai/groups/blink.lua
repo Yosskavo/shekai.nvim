@@ -1,9 +1,10 @@
 return function(p, config)
     config = config or { transparent = false, blur = false }
 
-    local menu_bg = config.transparent and (config.blur and p.blur_float or "NONE") or (config.blur and p.blur_float or p.bg_alt)
-    local doc_bg = config.transparent and (config.blur and p.blur_bg or "NONE") or (config.blur and p.blur_bg or p.bg_dim)
+    local menu_bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
+    local doc_bg = config.transparent and "NONE" or (config.blur and p.blur_bg or p.bg_dim)
     local border_fg = config.blur and p.blur_border or p.blue_accent
+
 
     return {
         -- 1. Main Suggestion Menu UI

@@ -1,8 +1,9 @@
 return function(p, config)
     config = config or { transparent = false, blur = false }
 
-    local search_bg = config.transparent and (config.blur and p.blur_float or "NONE") or (config.blur and p.blur_float or p.bg_alt)
-    local normal_bg = config.transparent and (config.blur and p.blur_bg or "NONE") or (config.blur and p.blur_bg or p.bg)
+    local search_bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
+    local normal_bg = config.transparent and "NONE" or (config.blur and p.blur_bg or p.bg)
+
 
     return {
         FzfLuaSearch        = { fg = p.fg_bright, bg = search_bg },

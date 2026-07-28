@@ -2,7 +2,8 @@ return function(p, config)
     config = config or { transparent = false, blur = false }
 
     local active_param_bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
-    local float_bg = config.transparent and (config.blur and p.blur_float or "NONE") or (config.blur and p.blur_float or p.bg_alt)
+    local float_bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
+
 
     return {
         DiagnosticError             = { fg = p.red },

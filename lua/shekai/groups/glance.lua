@@ -1,8 +1,9 @@
 return function(p, config)
     config = config or { transparent = false, blur = false }
 
-    local preview_bg = config.transparent and (config.blur and p.blur_float or "NONE") or (config.blur and p.blur_float or p.bg_alt)
-    local list_bg = config.transparent and (config.blur and p.blur_bg or "NONE") or p.selection
+    local preview_bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
+    local list_bg = config.transparent and "NONE" or (config.blur and p.blur_bg or p.selection)
+
 
     return {
         GlancePreviewNormal = { bg = preview_bg },
