@@ -1,55 +1,62 @@
-local p = require("shekai.colors").my_colors
+return function(p, config)
+    config = config or { transparent = false, blur = false }
 
-local m =
-{
-	-- ==========================================
-    -- NVIM-CMP (AUTOCOMPLETE MENU)
-    -- ==========================================
+    local menu_bg = config.transparent and (config.blur and p.blur_float or "NONE") or (config.blur and p.blur_float or p.bg_alt)
+    local doc_bg = config.transparent and (config.blur and p.blur_bg or "NONE") or (config.blur and p.blur_bg or p.bg_dim)
+    local border_fg = config.blur and p.blur_border or p.blue_accent
 
-    -- 1. Base Text Elements
-    CmpItemAbbr           = { fg = p.fg_main }, -- The standard text of the suggestion (e.g., the variable name)
-    CmpItemAbbrDeprecated = { fg = p.fg_faint, strikethrough = true }, -- Suggestions that are deprecated/outdated (usually gets a strike-through line)
+    return {
+        Pmenu                 = { fg = p.fg_muted, bg = menu_bg },
+        PmenuSel              = { fg = p.gold, bg = p.selection, bold = true },
+        PmenuSbar             = { fg = p.fg_soft, bg = p.blue_accent },
+        PmenuThumb            = { fg = p.fg_faint, bg = p.selection },
 
-    -- 2. Matching Characters (What you type vs What is suggested)
-    CmpItemAbbrMatch      = { fg = p.blue_sky, bold = true }, -- The exact letters you typed that match the suggestion
-    CmpItemAbbrMatchFuzzy = { fg = p.cyan, bold = true }, -- Letters matched by "fuzzy" searching (if you skip letters while typing)
+        CmpPmenu              = { fg = p.fg_main, bg = menu_bg },
+        CmpPmenuBorder        = { fg = border_fg, bg = menu_bg },
 
-    -- 3. The "Menu" (Source Indicator)
-    CmpItemMenu           = { fg = p.fg_soft, italic = true }, -- The text on the far right showing where the suggestion came from (e.g., "[LSP]", "[Buffer]", "[LuaSnip]")
+        CmpDocumentation      = { fg = p.fg_soft, bg = doc_bg },
+        CmpDocumentationBorder = { fg = border_fg, bg = doc_bg },
 
-    -- 4. The "Kind" (The icon/text showing what type of item it is)
-    CmpItemKind           = { fg = p.blue_main }, -- The default fallback color for the kind icon
+        -- 1. Base Text Elements
+        CmpItemAbbr           = { fg = p.fg_main },
+        CmpItemAbbrDeprecated = { fg = p.fg_faint, strikethrough = true },
 
-    -- ==========================================
-    -- SPECIFIC "KINDS" (Optional but highly recommended)
-    -- You can color specific icons differently so you can instantly
-    -- tell if a suggestion is a Function, a Variable, or a Keyword!
-    -- ==========================================
-    CmpItemKindText          = { fg = p.fg_soft },       -- Plain text suggestions
-    CmpItemKindMethod        = { fg = p.light_yellow },  -- Class methods
-    CmpItemKindFunction      = { fg = p.type_blue },     -- Standard functions
-    CmpItemKindConstructor   = { fg = p.emerald },       -- Constructors
-    CmpItemKindField         = { fg = p.blue_accent },   -- Object fields
-    CmpItemKindVariable      = { fg = p.light_blue },    -- Variables
-    CmpItemKindClass         = { fg = p.tan },           -- Classes
-    CmpItemKindInterface     = { fg = p.tan },           -- Interfaces
-    CmpItemKindModule        = { fg = p.purple_light },  -- Modules/Namespaces
-    CmpItemKindProperty      = { fg = p.blue_main },     -- Properties
-    CmpItemKindUnit          = { fg = p.peach_light },   -- Custom units
-    CmpItemKindValue         = { fg = p.orange },        -- Values
-    CmpItemKindEnum          = { fg = p.tan },           -- Enums
-    CmpItemKindKeyword       = { fg = p.light_purple },  -- Language keywords (if, return, etc)
-    CmpItemKindSnippet       = { fg = p.gold },          -- Code snippets (from LuaSnip)
-    CmpItemKindColor         = { fg = p.red },           -- Color values
-    CmpItemKindFile          = { fg = p.green_main },    -- File paths
-    CmpItemKindReference     = { fg = p.rose },          -- References
-    CmpItemKindFolder        = { fg = p.green_deep },    -- Folder paths
-    CmpItemKindEnumMember    = { fg = p.cyan },          -- Enum members
-    CmpItemKindConstant      = { fg = p.peach_light },   -- Constants
-    CmpItemKindStruct        = { fg = p.emerald },       -- Structs
-    CmpItemKindEvent         = { fg = p.violet_glow },   -- Events
-    CmpItemKindOperator      = { fg = p.violet },        -- Operators (+, -, etc)
-    CmpItemKindTypeParameter = { fg = p.tan },           -- Type parameters
-}
+        -- 2. Matching Characters
+        CmpItemAbbrMatch      = { fg = p.blue_sky, bold = true },
+        CmpItemAbbrMatchFuzzy = { fg = p.cyan, bold = true },
 
-return m
+        -- 3. The "Menu"
+        CmpItemMenu           = { fg = p.fg_soft, italic = true },
+
+        -- 4. The "Kind"
+        CmpItemKind           = { fg = p.blue_main },
+
+        -- SPECIFIC "KINDS"
+        CmpItemKindText          = { fg = p.fg_soft },
+        CmpItemKindMethod        = { fg = p.light_yellow },
+        CmpItemKindFunction      = { fg = p.type_blue },
+        CmpItemKindConstructor   = { fg = p.emerald },
+        CmpItemKindField         = { fg = p.blue_accent },
+        CmpItemKindVariable      = { fg = p.light_blue },
+        CmpItemKindClass         = { fg = p.tan },
+        CmpItemKindInterface     = { fg = p.tan },
+        CmpItemKindModule        = { fg = p.purple_light },
+        CmpItemKindProperty      = { fg = p.blue_main },
+        CmpItemKindUnit          = { fg = p.peach_light },
+        CmpItemKindValue         = { fg = p.orange },
+        CmpItemKindEnum          = { fg = p.tan },
+        CmpItemKindKeyword       = { fg = p.light_purple },
+        CmpItemKindSnippet       = { fg = p.gold },
+        CmpItemKindColor         = { fg = p.red },
+        CmpItemKindFile          = { fg = p.green_main },
+        CmpItemKindReference     = { fg = p.rose },
+        CmpItemKindFolder        = { fg = p.green_deep },
+        CmpItemKindEnumMember    = { fg = p.cyan },
+        CmpItemKindConstant      = { fg = p.peach_light },
+        CmpItemKindStruct        = { fg = p.emerald },
+        CmpItemKindEvent         = { fg = p.violet_glow },
+        CmpItemKindOperator      = { fg = p.violet },
+        CmpItemKindTypeParameter = { fg = p.tan },
+    }
+end
+

@@ -1,8 +1,8 @@
-local p = require("shekai.colors").my_colors
+return function(p, config)
+    config = config or { transparent = false, blur = false }
 
-local m =
-{
-	FlashPromptIcon = {fg = p.peach}
-}
+    return {
+        FlashPromptIcon = { fg = p.peach },
+    }
+end
 
-return m

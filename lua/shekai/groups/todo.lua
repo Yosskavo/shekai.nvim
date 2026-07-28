@@ -1,21 +1,22 @@
-local p = require("shekai.colors").my_colors
+return function(p, config)
+    config = config or { transparent = false, blur = false }
+    local fg_bg = config.transparent and p.bg or (config.blur and p.blur_bg or p.bg_alt)
 
-local m =
-{
-	TodoBgFIX  = { bg = p.red, fg = p.bg_alt, bold = true }, -- Background block for "FIX:" comments
-    TodoFgFIX  = { fg = p.red, bold = true }, -- Standard text for "FIX:" comments
-    TodoBgTODO = { bg = p.blue_accent, fg = p.bg_alt, bold = true }, -- Background block for "TODO:" comments
-    TodoFgTODO = { fg = p.blue_accent, bold = true }, -- Standard text for "TODO:" comments
-    TodoBgHACK = { bg = p.orange, fg = p.bg_alt, bold = true }, -- Background block for "HACK:" comments
-    TodoFgHACK = { fg = p.orange, bold = true }, -- Standard text for "HACK:" comments
-    TodoBgWARN = { bg = p.orange, fg = p.bg_alt, bold = true }, -- Background block for "WARN:" comments
-    TodoFgWARN = { fg = p.orange, bold = true }, -- Standard text for "WARN:" comments
-    TodoBgPERF = { bg = p.purple_light, fg = p.bg_alt, bold = true }, -- Background block for "PERF:" comments
-    TodoFgPERF = { fg = p.purple_light, bold = true }, -- Standard text for "PERF:" comments
-    TodoBgNOTE = { bg = p.emerald, fg = p.bg_alt, bold = true }, -- Background block for "NOTE:" comments
-    TodoFgNOTE = { fg = p.emerald, bold = true }, -- Standard text for "NOTE:" comments
-    TodoBgTEST = { bg = p.blue_electric or p.violet, fg = p.bg_alt, bold = true }, -- Background block for "TEST:" comments
-    TodoFgTEST = { fg = p.blue_electric or p.violet, bold = true }, -- Standard text for "TEST:" comments
-}
+    return {
+        TodoBgFIX  = { bg = p.red, fg = fg_bg, bold = true },
+        TodoFgFIX  = { fg = p.red, bold = true },
+        TodoBgTODO = { bg = p.blue_accent, fg = fg_bg, bold = true },
+        TodoFgTODO = { fg = p.blue_accent, bold = true },
+        TodoBgHACK = { bg = p.orange, fg = fg_bg, bold = true },
+        TodoFgHACK = { fg = p.orange, bold = true },
+        TodoBgWARN = { bg = p.orange, fg = fg_bg, bold = true },
+        TodoFgWARN = { fg = p.orange, bold = true },
+        TodoBgPERF = { bg = p.purple_light, fg = fg_bg, bold = true },
+        TodoFgPERF = { fg = p.purple_light, bold = true },
+        TodoBgNOTE = { bg = p.emerald, fg = fg_bg, bold = true },
+        TodoFgNOTE = { fg = p.emerald, bold = true },
+        TodoBgTEST = { bg = p.blue_electric or p.violet, fg = fg_bg, bold = true },
+        TodoFgTEST = { fg = p.blue_electric or p.violet, bold = true },
+    }
+end
 
-return m
