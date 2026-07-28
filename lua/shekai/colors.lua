@@ -1,6 +1,6 @@
 local M = {}
 
-M.my_colors = {
+M.base_colors = {
 	-- Foundation & UI (absolute night)
 	fg             = "#b8c1ec",
 	bg             = "#0f111a",
@@ -177,5 +177,22 @@ M.my_colors = {
 	abyss_white_bg    = "#1a1a1a",
 	abyss_white_fg    = "#eeeeee",
 }
+
+M.my_colors = M.base_colors
+
+function M.get_colors(config)
+	config = config or { transparent = false, blur = false }
+	local c = vim.deepcopy(M.base_colors)
+
+	if config.blur then
+		c.bg         = c.blur_bg
+		c.bg_dim     = "#070910"
+		c.bg_alt     = c.blur_float
+		c.selection  = c.blur_overlay
+	end
+
+	M.my_colors = c
+	return c
+end
 
 return M

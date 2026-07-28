@@ -1,22 +1,24 @@
-local p = require("shekai.colors").my_colors
+return function(p, config)
+    config = config or { transparent = false, blur = false }
 
-local m =
-{
-	NotifyERRORBorder = { bg = p.bg_alt, fg = p.red_deep }, -- Border for error notifications
-    NotifyWARNBorder  = { bg = p.bg_alt, fg = p.light_orange }, -- Border for warning notifications
-    NotifyINFOBorder  = { bg = p.bg_alt, fg = p.green_deep }, -- Border for info notifications
-    NotifyDEBUGBorder = { bg = p.bg_alt, fg = p.purple_light }, -- Border for debug notifications
-    NotifyTRACEBorder = { bg = p.bg_alt, fg = p.fg_soft }, -- Border for trace notifications
-    NotifyERRORIcon   = { bg = p.bg_alt, fg = p.red }, -- Icon color for error notifications
-    NotifyWARNIcon    = { bg = p.bg_alt, fg = p.light_yellow }, -- Icon color for warning notifications
-    NotifyINFOIcon    = { bg = p.bg_alt, fg = p.emerald }, -- Icon color for info notifications
-    NotifyDEBUGIcon   = { bg = p.bg_alt, fg = p.violet }, -- Icon color for debug notifications
-    NotifyTRACEIcon   = { bg = p.bg_alt, fg = p.fg_faint }, -- Icon color for trace notifications
-    NotifyERRORTitle  = { bg = p.bg_alt, fg = p.fg_bright }, -- Title text for error notifications
-    NotifyWARNTitle   = { bg = p.bg_alt, fg = p.fg_bright }, -- Title text for warning notifications
-    NotifyINFOTitle   = { bg = p.bg_alt, fg = p.fg_bright }, -- Title text for info notifications
-    NotifyDEBUGTitle  = { bg = p.bg_alt, fg = p.fg_bright }, -- Title text for debug notifications
-    NotifyTRACETitle  = { bg = p.bg_alt, fg = p.fg_bright }, -- Title text for trace notifications
-}
+    local notify_bg = config.transparent and (config.blur and p.blur_float or "NONE") or (config.blur and p.blur_float or p.bg_alt)
 
-return m
+    return {
+        NotifyERRORBorder = { bg = notify_bg, fg = p.red_deep },
+        NotifyWARNBorder  = { bg = notify_bg, fg = p.light_orange },
+        NotifyINFOBorder  = { bg = notify_bg, fg = p.green_deep },
+        NotifyDEBUGBorder = { bg = notify_bg, fg = p.purple_light },
+        NotifyTRACEBorder = { bg = notify_bg, fg = p.fg_soft },
+        NotifyERRORIcon   = { bg = notify_bg, fg = p.red },
+        NotifyWARNIcon    = { bg = notify_bg, fg = p.light_yellow },
+        NotifyINFOIcon    = { bg = notify_bg, fg = p.emerald },
+        NotifyDEBUGIcon   = { bg = notify_bg, fg = p.violet },
+        NotifyTRACEIcon   = { bg = notify_bg, fg = p.fg_faint },
+        NotifyERRORTitle  = { bg = notify_bg, fg = p.fg_bright },
+        NotifyWARNTitle   = { bg = notify_bg, fg = p.fg_bright },
+        NotifyINFOTitle   = { bg = notify_bg, fg = p.fg_bright },
+        NotifyDEBUGTitle  = { bg = notify_bg, fg = p.fg_bright },
+        NotifyTRACETitle  = { bg = notify_bg, fg = p.fg_bright },
+    }
+end
+

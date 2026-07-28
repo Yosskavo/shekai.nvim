@@ -1,21 +1,13 @@
-local p = require("shekai.colors").my_colors
+return function(p, config)
+    config = config or { transparent = false, blur = false }
 
-local m = {
-    -- The background of the entire command line at the bottom.
-    -- Set this to "NONE" if you want it to perfectly blend into your normal background,
-    -- or set it to p.marine_deep if you want it to look like a distinct bar.
-    MsgArea = { bg = p.marine_deep, fg = p.fg_bright },
+    local msg_bg = config.transparent and "NONE" or (config.blur and p.blur_bg or p.marine_deep)
 
-    -- (Optional) Related command line groups you might want to theme:
+    return {
+        MsgArea  = { bg = msg_bg, fg = p.fg_bright },
+        ModeMsg  = { fg = p.gold, bold = true, bg = "NONE" },
+        MoreMsg  = { fg = p.ice_blue, bg = "NONE" },
+        ErrorMsg = { fg = p.red, bg = "NONE", bold = true },
+    }
+end
 
-    -- The "-- INSERT --" or "-- VISUAL --" text if you haven't disabled it
-    ModeMsg = { fg = p.gold, bold = true, bg = "NONE" },
-
-    -- The "Press ENTER or type command to continue" prompts
-    MoreMsg = { fg = p.ice_blue, bg = "NONE" },
-
-    -- Error messages that pop up in the command line
-    ErrorMsg = { fg = p.red, bg = "NONE", bold = true },
-}
-
-return m

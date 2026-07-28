@@ -1,46 +1,25 @@
--- lua/shekai/groups/fzf.lua
-local p = require("shekai.colors").my_colors
+return function(p, config)
+    config = config or { transparent = false, blur = false }
 
-local m = {
-    -- ==========================================
-    -- 1. THE PROMPT (Where you type)
-    -- ==========================================
-    FzfLuaSearch        = { fg = p.fg_bright, bg = p.bg_alt }, -- The text you type
-    FzfLuaFzfPrompt     = { fg = p.purple_light },             -- The '>' input icon
+    local search_bg = config.transparent and (config.blur and p.blur_float or "NONE") or (config.blur and p.blur_float or p.bg_alt)
+    local normal_bg = config.transparent and (config.blur and p.blur_bg or "NONE") or (config.blur and p.blur_bg or p.bg)
 
-    -- ==========================================
-    -- 2. THE RESULTS (The list of files)
-    -- ==========================================
-    FzfLuaNormal        = { fg = p.silver },                   -- Main text
-    FzfLuaBorder        = { fg = p.blue_accent },              -- Main window border
-    FzfLuaTitle         = { fg = p.blue_sky, bold = true },    -- Main window title
+    return {
+        FzfLuaSearch        = { fg = p.fg_bright, bg = search_bg },
+        FzfLuaFzfPrompt     = { fg = p.purple_light },
+        FzfLuaNormal        = { fg = p.silver, bg = normal_bg },
+        FzfLuaBorder        = { fg = p.blue_accent, bg = normal_bg },
+        FzfLuaTitle         = { fg = p.blue_sky, bold = true },
+        FzfLuaPreviewNormal = { fg = p.silver, bg = search_bg },
+        FzfLuaPreviewBorder = { fg = p.violet, bg = search_bg },
+        FzfLuaPreviewTitle  = { fg = p.emerald, bold = true },
+        FzfLuaFzfCursorLine = { fg = p.blue_electric, bg = p.selection, bold = true },
+        FzfLuaCursorLine    = { fg = p.blue_electric, bg = p.selection, bold = true },
+        FzfLuaFzfPointer    = { fg = p.gold },
+        FzfLuaFzfMatch      = { fg = p.peach, bg = p.visual, bold = true },
+        FzfLuaFzfInfo       = { fg = p.fg_muted },
+        FzfLuaFzfSpinner    = { fg = p.green_main },
+        FzfLuaFzfHeader     = { fg = p.green_main },
+    }
+end
 
-    -- ==========================================
-    -- 3. THE PREVIEW (The file content on the right)
-    -- ==========================================
-    FzfLuaPreviewNormal = { link = "Normal" },
-    FzfLuaPreviewBorder = { fg = p.violet },
-    FzfLuaPreviewTitle  = { fg = p.emerald, bold = true },
-
-    -- ==========================================
-    -- 4. SELECTION & MATCHING (Crucial for navigation)
-    -- ==========================================
-    -- The actual line your cursor is currently resting on
-    FzfLuaFzfCursorLine = { fg = p.blue_electric, bg = p.selection, bold = true }, 
-    FzfLuaCursorLine    = { fg = p.blue_electric, bg = p.selection, bold = true }, -- Fallback for non-fzf buffers
-    
-    -- The little icon (usually '>') next to the selected line
-    FzfLuaFzfPointer    = { fg = p.gold }, 
-
-    -- The exact letters in the results that match what you typed!
-    FzfLuaFzfMatch      = { fg = p.peach, bg = p.visual, bold = true },
-
-    -- ==========================================
-    -- 5. FALLBACKS & INFO
-    -- ==========================================
-    FzfLuaFzfInfo       = { fg = p.fg_muted },    -- The "10/100" results counter
-    FzfLuaFzfSpinner    = { fg = p.green_main },  -- Loading spinner
-    FzfLuaFzfHeader     = { fg = p.green_main },  -- Column headers
-}
-
-return m

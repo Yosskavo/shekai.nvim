@@ -1,98 +1,83 @@
-local p = require("shekai.colors").my_colors
+return function(p, config)
+    config = config or { transparent = false, blur = false }
 
-local m =
-{
-	-- NOTE: this is for barbar --
-	BufferCurrent      = { bg = p.bg_alt }, -- The currently active tab
-    BufferVisible      = { bg = p.bg_dim }, -- Inactive tabs that are still visible
-    BufferCurrentPin   = { fg = p.rose, bg = p.bg_alt }, -- Pinned tab (active)
-    BufferVisiblePin   = { fg = p.rose, bg = p.bg_dim }, -- Pinned tab (inactive)
-    BufferVisibleERROR = { fg = p.deep_blood, bg = p.bg_dim }, -- Inactive tab containing errors
-    BufferCurrentERROR = { fg = p.red, bg = p.bg_alt }, -- Active tab containing errors
-    BufferVisibleHINT  = { fg = p.green_lime, bg = p.bg_dim }, -- Inactive tab containing hints
-    BufferCurrentHINT  = { fg = p.light_green, bg = p.bg_alt }, -- Active tab containing hints
-    BufferVisibleMod   = { fg = p.gold, bg = p.bg_dim }, -- Inactive tab with unsaved changes
-    BufferCurrentMod   = { fg = p.yellow, bg = p.bg_alt }, -- Active tab with unsaved changes
-    BufferVisibleWARN  = { fg = p.light_yellow, bg = p.bg_dim }, -- Inactive tab containing warnings
-    BufferCurrentWARN  = { fg = p.abyss_yellow_fg, bg = p.bg_alt }, -- Active tab containing warnings
+    local active_bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
+    local inactive_bg = config.transparent and "NONE" or (config.blur and p.blur_bg or p.bg_dim)
 
-	-- NOTE: bufferline handler --
+    return {
+        -- NOTE: barbar --
+        BufferCurrent      = { bg = active_bg },
+        BufferVisible      = { bg = inactive_bg },
+        BufferCurrentPin   = { fg = p.rose, bg = active_bg },
+        BufferVisiblePin   = { fg = p.rose, bg = inactive_bg },
+        BufferVisibleERROR = { fg = p.deep_blood, bg = inactive_bg },
+        BufferCurrentERROR = { fg = p.red, bg = active_bg },
+        BufferVisibleHINT  = { fg = p.green_lime, bg = inactive_bg },
+        BufferCurrentHINT  = { fg = p.light_green, bg = active_bg },
+        BufferVisibleMod   = { fg = p.gold, bg = inactive_bg },
+        BufferCurrentMod   = { fg = p.yellow, bg = active_bg },
+        BufferVisibleWARN  = { fg = p.light_yellow, bg = inactive_bg },
+        BufferCurrentWARN  = { fg = p.abyss_yellow_fg, bg = active_bg },
 
-	-- 1. BASE TABS
-    BufferLineBufferSelected = { fg = p.fg_bright, bg = p.bg_alt, bold = true },
-    BufferLineBufferVisible  = { fg = p.fg_soft,   bg = p.bg_dim },
-    BufferLineBackground     = { fg = p.fg_muted,  bg = p.bg_dim },
-    BufferLineBuffer         = { fg = p.fg_muted,  bg = p.bg_dim }, -- Fallback
+        -- NOTE: bufferline handler --
+        BufferLineBufferSelected = { fg = p.fg_bright, bg = active_bg, bold = true },
+        BufferLineBufferVisible  = { fg = p.fg_soft,   bg = inactive_bg },
+        BufferLineBackground     = { fg = p.fg_muted,  bg = inactive_bg },
+        BufferLineBuffer         = { fg = p.fg_muted,  bg = inactive_bg },
 
-    -- 2. THE EMPTY SPACE (The Abyss)
-    BufferLineFill            = { link = "Normal" },
-    BufferLineOffsetSeparator = { link = "Normal" },
+        BufferLineFill            = { bg = config.transparent and "NONE" or inactive_bg },
+        BufferLineOffsetSeparator = { bg = config.transparent and "NONE" or inactive_bg },
 
-    -- 3. SEPARATORS
-    BufferLineSeparatorSelected = { fg = p.bg_dim, bg = p.bg_alt },
-    BufferLineSeparatorVisible  = { fg = p.bg_dim, bg = p.bg_dim },
-    BufferLineSeparator         = { fg = p.bg_dim, bg = p.bg_dim },
+        BufferLineSeparatorSelected = { fg = inactive_bg, bg = active_bg },
+        BufferLineSeparatorVisible  = { fg = inactive_bg, bg = inactive_bg },
+        BufferLineSeparator         = { fg = inactive_bg, bg = inactive_bg },
 
-    -- 4. ACTIVE TAB INDICATOR
-    BufferLineIndicatorSelected = { fg = p.purple_tokyo, bg = p.bg_alt },
-    BufferLineIndicatorVisible  = { fg = p.ice_blue, bg = p.bg_dim },
+        BufferLineIndicatorSelected = { fg = p.purple_tokyo, bg = active_bg },
+        BufferLineIndicatorVisible  = { fg = p.ice_blue, bg = inactive_bg },
 
-    -- 5. CLOSE BUTTONS
-    BufferLineCloseButtonSelected = { fg = p.fg_bright, bg = p.bg_alt },
-    BufferLineCloseButtonVisible  = { fg = p.fg_soft,   bg = p.bg_dim },
-    BufferLineCloseButton         = { fg = p.fg_muted,  bg = p.bg_dim },
+        BufferLineCloseButtonSelected = { fg = p.fg_bright, bg = active_bg },
+        BufferLineCloseButtonVisible  = { fg = p.fg_soft,   bg = inactive_bg },
+        BufferLineCloseButton         = { fg = p.fg_muted,  bg = inactive_bg },
 
-    -- 6. MODIFIED ICONS (The unsaved dot/plus)
-    BufferLineModifiedSelected = { fg = p.yellow, bg = p.bg_alt },
-    BufferLineModifiedVisible  = { fg = p.gold,   bg = p.bg_dim },
-    BufferLineModified         = { fg = p.gold,   bg = p.bg_dim },
+        BufferLineModifiedSelected = { fg = p.yellow, bg = active_bg },
+        BufferLineModifiedVisible  = { fg = p.gold,   bg = inactive_bg },
+        BufferLineModified         = { fg = p.gold,   bg = inactive_bg },
 
-    -- 7. DUPLICATE/FOLDER NAMES (If files have the same name)
-    BufferLineDuplicateSelected = { fg = p.rose, bg = p.bg_alt },
-    BufferLineDuplicateVisible  = { fg = p.rose, bg = p.bg_dim },
-    BufferLineDuplicate         = { fg = p.rose, bg = p.bg_dim },
+        BufferLineDuplicateSelected = { fg = p.rose, bg = active_bg },
+        BufferLineDuplicateVisible  = { fg = p.rose, bg = inactive_bg },
+        BufferLineDuplicate         = { fg = p.rose, bg = inactive_bg },
 
-    -- 8. ICONS (Forces the base icon groups to use your backgrounds)
-    BufferLineIconSelected = { bg = p.red },
-    BufferLineIconVisible  = { bg = p.red },
-    BufferLineIcon         = { bg = p.red },
+        BufferLineIconSelected = { bg = p.red },
+        BufferLineIconVisible  = { bg = p.red },
+        BufferLineIcon         = { bg = p.red },
 
-    -- ==========================================
-    -- 9. DIAGNOSTICS (This fixes the '1 (i)' gray boxes)
-    -- Bufferline splits these into 'Diagnostic' (text) and normal (icon)
-    -- ==========================================
+        BufferLineErrorSelected           = { fg = p.red,        bg = active_bg, bold = true },
+        BufferLineErrorDiagnosticSelected = { fg = p.red,        bg = active_bg, bold = true },
+        BufferLineErrorVisible            = { fg = p.deep_blood, bg = inactive_bg },
+        BufferLineErrorDiagnosticVisible  = { fg = p.deep_blood, bg = inactive_bg },
+        BufferLineError                   = { fg = p.deep_blood, bg = inactive_bg },
+        BufferLineErrorDiagnostic         = { fg = p.deep_blood, bg = inactive_bg },
 
-    -- Errors
-    BufferLineErrorSelected           = { fg = p.red,        bg = p.bg_alt, bold = true },
-    BufferLineErrorDiagnosticSelected = { fg = p.red,        bg = p.bg_alt, bold = true },
-    BufferLineErrorVisible            = { fg = p.deep_blood, bg = p.bg_dim },
-    BufferLineErrorDiagnosticVisible  = { fg = p.deep_blood, bg = p.bg_dim },
-    BufferLineError                   = { fg = p.deep_blood, bg = p.bg_dim },
-    BufferLineErrorDiagnostic         = { fg = p.deep_blood, bg = p.bg_dim },
+        BufferLineWarningSelected           = { fg = p.abyss_yellow_fg, bg = active_bg },
+        BufferLineWarningDiagnosticSelected = { fg = p.abyss_yellow_fg, bg = active_bg },
+        BufferLineWarningVisible            = { fg = p.light_yellow,    bg = inactive_bg },
+        BufferLineWarningDiagnosticVisible  = { fg = p.light_yellow,    bg = inactive_bg },
+        BufferLineWarning                   = { fg = p.light_yellow,    bg = inactive_bg },
+        BufferLineWarningDiagnostic         = { fg = p.light_yellow,    bg = inactive_bg },
 
-    -- Warnings
-    BufferLineWarningSelected           = { fg = p.abyss_yellow_fg, bg = p.bg_alt },
-    BufferLineWarningDiagnosticSelected = { fg = p.abyss_yellow_fg, bg = p.bg_alt },
-    BufferLineWarningVisible            = { fg = p.light_yellow,    bg = p.bg_dim },
-    BufferLineWarningDiagnosticVisible  = { fg = p.light_yellow,    bg = p.bg_dim },
-    BufferLineWarning                   = { fg = p.light_yellow,    bg = p.bg_dim },
-    BufferLineWarningDiagnostic         = { fg = p.light_yellow,    bg = p.bg_dim },
+        BufferLineInfoSelected           = { fg = p.green_lime, bg = active_bg },
+        BufferLineInfoDiagnosticSelected = { fg = p.green_lime, bg = active_bg },
+        BufferLineInfoVisible            = { fg = p.green_lime, bg = inactive_bg },
+        BufferLineInfoDiagnosticVisible  = { fg = p.green_lime, bg = inactive_bg },
+        BufferLineInfo                   = { fg = p.green_lime, bg = inactive_bg },
+        BufferLineInfoDiagnostic         = { fg = p.green_lime, bg = inactive_bg },
 
-    -- Infos
-    BufferLineInfoSelected           = { fg = p.green_lime, bg = p.bg_alt },
-    BufferLineInfoDiagnosticSelected = { fg = p.green_lime, bg = p.bg_alt },
-    BufferLineInfoVisible            = { fg = p.green_lime, bg = p.bg_dim },
-    BufferLineInfoDiagnosticVisible  = { fg = p.green_lime, bg = p.bg_dim },
-    BufferLineInfo                   = { fg = p.green_lime, bg = p.bg_dim },
-    BufferLineInfoDiagnostic         = { fg = p.green_lime, bg = p.bg_dim },
+        BufferLineHintSelected           = { fg = p.light_green, bg = active_bg },
+        BufferLineHintDiagnosticSelected = { fg = p.light_green, bg = active_bg },
+        BufferLineHintVisible            = { fg = p.green_lime,  bg = inactive_bg },
+        BufferLineHintDiagnosticVisible  = { fg = p.green_lime,  bg = inactive_bg },
+        BufferLineHint                   = { fg = p.green_lime,  bg = inactive_bg },
+        BufferLineHintDiagnostic         = { fg = p.green_lime,  bg = inactive_bg },
+    }
+end
 
-    -- Hints
-    BufferLineHintSelected           = { fg = p.light_green, bg = p.bg_alt },
-    BufferLineHintDiagnosticSelected = { fg = p.light_green, bg = p.bg_alt },
-    BufferLineHintVisible            = { fg = p.green_lime,  bg = p.bg_dim },
-    BufferLineHintDiagnosticVisible  = { fg = p.green_lime,  bg = p.bg_dim },
-    BufferLineHint                   = { fg = p.green_lime,  bg = p.bg_dim },
-    BufferLineHintDiagnostic         = { fg = p.green_lime,  bg = p.bg_dim },
-}
-
-return m
