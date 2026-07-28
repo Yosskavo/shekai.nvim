@@ -1,11 +1,9 @@
 -- lua/shekai/groups.lua
 
 local M = {}
-
 function M.get_groups(config, p)
     config = config or require("shekai").config or { transparent = false, blur = false }
     p = p or require("shekai.colors").get_colors(config)
-
     local all_highlights = {}
 
     -- Just list the names of the files in your 'groups' folder here
@@ -29,7 +27,12 @@ function M.get_groups(config, p)
         "msg",
         "which-key",
         "man",
-        "glance"
+        "glance",
+		"blink",
+		"docker",
+		"c",
+		"cpp",
+		"odin"
     }
 
     for _, mod in ipairs(modules) do
