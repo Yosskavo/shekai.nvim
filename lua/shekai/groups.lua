@@ -32,7 +32,11 @@ function M.get_groups(config, p)
 		"docker",
 		"c",
 		"cpp",
-		"odin"
+		"odin",
+		"html",
+		"css",
+		"js",
+		"mini"
     }
 
     for _, mod in ipairs(modules) do
