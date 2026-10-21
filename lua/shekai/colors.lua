@@ -37,12 +37,13 @@ M.base_colors = {
 	-- Blues (dark-marine core)
 	blue_sky       = "#6bb3d6",
 	blue_cyan      = "#5fa8c9",
+	cyan           = "#5fa8c9",
 	blue_accent    = "#6c82c7",
 	turquoise      = "#2b8fa3",
 	teal           = "#1f7f8a",
 	blue_electric  = "#5c6fae",
 
-	-- Marine additions (NEW)
+	-- Marine additions
 	marine_ink     = "#0b1c2d",
 	marine_deep    = "#102a43",
 	marine_teal    = "#163a3f",
@@ -51,9 +52,9 @@ M.base_colors = {
 	abyss_blue     = "#081624",
 
 	-- tokyo blue
-	tokyo_blue = "#82aaff",
-	tokyo_cyan = "#86e1fc",
-	tokyo_mist = "#8ca0dc",
+	tokyo_blue     = "#82aaff",
+	tokyo_cyan     = "#86e1fc",
+	tokyo_mist     = "#8ca0dc",
 
 	-- Greens (submerged, not fresh)
 	green_lime     = "#8fb573",
@@ -68,13 +69,7 @@ M.base_colors = {
 	purple_deep    = "#6b5a99",
 	violet         = "#7d6bd1",
 
-	-- blur 
-	blur_bg       = "#0b0f1a",
-	blur_float    = "#101528",
-	blur_border   = "#1b2038",
-	blur_overlay  = "#151a2e",
-
-	-- Foreground ladder (NEW)
+	-- Foreground ladder
 	fg_bright      = "#d7defa", -- titles, active labels
 	fg_main        = "#c7cff2", -- primary text
 	fg_soft        = "#aab3d6", -- secondary text
@@ -102,47 +97,47 @@ M.base_colors = {
 	amber_soft     = "#e0b68a",
 	peach_light    = "#dcb09a",
 
--- Numbers & Constants Accents
-    tokyo_orange   = "#ff9e64", -- Soft glowing orange (Standard TN Numbers)
-    tokyo_gold     = "#e0af68", -- Muted elegant gold
-    gruvbox_gold   = "#fabd2f", -- Vibrant retro gold
-    gruvbox_orange = "#fe8019", -- Deep rust orange
+	-- Numbers & Constants Accents
+	tokyo_orange   = "#ff9e64", -- Soft glowing orange (Standard TN Numbers)
+	tokyo_gold     = "#e0af68", -- Muted elegant gold
+	gruvbox_gold   = "#fabd2f", -- Vibrant retro gold
+	gruvbox_orange = "#fe8019", -- Deep rust orange
 
 	-- Soft blues (subtle, for float windows, panels)
-	blue_soft        = "#7da7d9",  -- gentle, muted, readable
-	blue_mist        = "#86aedd",  -- light, slightly cool
-	blue_light_bg    = "#9ac4e2",  -- good for subtle highlights on dark bg
+	blue_soft      = "#7da7d9", -- gentle, muted, readable
+	blue_mist      = "#86aedd", -- light, slightly cool
+	blue_light_bg  = "#9ac4e2", -- good for subtle highlights on dark bg
 
 	-- 2. Normal / Primary blues (text, icons, or active elements)
-	blue_normal      = "#6bb3d6",  -- matches your existing blue_sky
-	blue_main        = "#5fa8c9",  -- matches blue_cyan
-	blue_mid         = "#558fc1",  -- slightly darker, for contrast
+	blue_normal    = "#6bb3d6", -- matches your existing blue_sky
+	blue_main      = "#5fa8c9", -- matches blue_cyan
+	blue_mid       = "#558fc1", -- slightly darker, for contrast
 
 	-- 3. Accent blues (links, selection, buttons)
-	blue_ice         = "#a0c4ff",  -- soft, frosty, works with fg_bright
+	blue_ice       = "#a0c4ff", -- soft, frosty, works with fg_bright
 
 	-- blue type
-	type_blue = "#65bcff",
+	type_blue      = "#65bcff",
 
 	-- light colors for 12 colors
-    light_red      = "#e7949e",
-    light_burgundy = "#a06070",
-    light_orange   = "#e0aa7c",
-    light_yellow   = "#f0d18c",
-    light_green    = "#8fd4a0",
-    light_teal     = "#6fc2c8",
-    light_blue     = "#8fc3f2",
-    light_marine   = "#5c7fa1",
-    light_purple   = "#bfa6f0",
-    light_magenta  = "#ab90e0",
-    light_silver   = "#c0c6e0",
-    light_ice      = "#a6d0f5",
+	light_red      = "#e7949e",
+	light_burgundy = "#a06070",
+	light_orange   = "#e0aa7c",
+	light_yellow   = "#f0d18c",
+	light_green    = "#8fd4a0",
+	light_teal     = "#6fc2c8",
+	light_blue     = "#8fc3f2",
+	light_marine   = "#5c7fa1",
+	light_purple   = "#bfa6f0",
+	light_magenta  = "#ab90e0",
+	light_silver   = "#c0c6e0",
+	light_ice      = "#a6d0f5",
 
--- Lighter accents for Structural Syntax
-    module_light   = "#8ce6eb", -- A bright, icy teal for namespaces (std::) and imports
-    punct_light    = "#a9b4d4", -- A crisp silver-blue for delimiters ( , : ; )
-    bracket_light  = "#f2cc96", -- A bright, soft amber for brackets ( {} [] () )
-    operator_light = "#a4b5f2", -- A soft luminous periwinkle for math/logic ( + - == )
+	-- Lighter accents for Structural Syntax
+	module_light   = "#8ce6eb", -- A bright, icy teal for namespaces (std::) and imports
+	punct_light    = "#a9b4d4", -- A crisp silver-blue for delimiters ( , : ; )
+	bracket_light  = "#f2cc96", -- A bright, soft amber for brackets ( {} [] () )
+	operator_light = "#a4b5f2", -- A soft luminous periwinkle for math/logic ( + - == )
 
 	-- the abyss
 	-- black
@@ -180,17 +175,8 @@ M.base_colors = {
 
 M.my_colors = M.base_colors
 
-function M.get_colors(config)
-	config = config or { transparent = false, blur = false }
+function M.get_colors()
 	local c = vim.deepcopy(M.base_colors)
-
-	if config.blur then
-		c.bg         = c.blur_bg
-		c.bg_dim     = "#070910"
-		c.bg_alt     = c.blur_float
-		c.selection  = c.blur_overlay
-	end
-
 	M.my_colors = c
 	return c
 end

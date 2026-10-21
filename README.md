@@ -1,4 +1,6 @@
-## Welcome to my theme
+## Welcome to shekai.nvim
+
+A deep, dark-marine Neovim colorscheme designed with high contrast, calm aesthetics, and fine-tuned syntax and plugin highlights.
 
 ### Installation
 
@@ -10,12 +12,7 @@
     "yosskavo/shekai.nvim",
     lazy = false,
     priority = 1000,
-    opts = {
-        transparent = true, -- Enable background transparency
-        blur = true,        -- Enable soft blur background colors
-    },
-    config = function(_, opts)
-        require("shekai").setup(opts)
+    config = function()
         vim.cmd("colorscheme shekai")
     end,
 }
@@ -30,24 +27,36 @@ Plug 'Yosskavo/shekai.nvim'
 ```
 
 ```lua
-require("shekai").setup({
-    transparent = true,
-    blur = true,
-})
+require("shekai").setup()
 vim.cmd("colorscheme shekai")
 ```
 
 </details>
 
-### Configuration
+### Lualine Integration
 
-| Option | Type | Default | Description |
-| --- | --- | --- | --- |
-| `transparent` | `boolean` | `false` | Enable transparent window backgrounds |
-| `blur` | `boolean` | `false` | Enable soft blur dark palette for background and floating panels |
+```lua
+require("lualine").setup({
+    options = {
+        theme = "shekai",
+    },
+})
+```
 
-### What is next
+### Supported Plugins
 
-- [ ] a theme handler for some main langs (c, c++, py, bash)
-
-
+- [Bufferline](https://github.com/akinsho/bufferline.nvim) / [Barbar](https://github.com/romgrk/barbar.nvim)
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [Fzf-Lua](https://github.com/ibhagwan/fzf-lua)
+- [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [Oil.nvim](https://github.com/stevearc/oil.nvim)
+- [Which-Key](https://github.com/folke/which-key.nvim)
+- [Noice.nvim](https://github.com/folke/noice.nvim)
+- [Nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp) / [Blink.cmp](https://github.com/Saghen/blink.cmp)
+- [Todo-comments](https://github.com/folke/todo-comments.nvim)
+- [Render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+- [Flash.nvim](https://github.com/folke/flash.nvim)
+- [Glance.nvim](https://github.com/dnlhc/glance.nvim)
+- [Mini.nvim](https://github.com/echasnovski/mini.nvim)
+- [Dashboard-nvim](https://github.com/nvim-dashboard-nvim/dashboard-nvim)

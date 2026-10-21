@@ -1,6 +1,4 @@
 return function(p, config)
-    config = config or { transparent = false, blur = false }
-
     return {
         ["@keyword.directive.dockerfile"] = { fg = p.light_teal, bold = true },
         ["@keyword.dockerfile"]           = { fg = p.purple_light, bold = true },
@@ -9,4 +7,3 @@ return function(p, config)
         ["@operator.dockerfile"]          = { fg = p.operator_light },
     }
 end
-

@@ -1,7 +1,5 @@
 return function(p, config)
-    config = config or { transparent = false, blur = false }
-
-    local bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
+    local bg = p.bg_alt
 
     return {
         NotifyERRORBody   = { bg = bg, fg = p.fg_main },
@@ -29,5 +27,3 @@ return function(p, config)
         NotifyTRACETitle  = { bg = bg, fg = p.fg_bright },
     }
 end
-
-

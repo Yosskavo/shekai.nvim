@@ -1,7 +1,5 @@
 return function(p, config)
-    config = config or { transparent = false, blur = false }
-
-    local msg_bg = config.transparent and "NONE" or (config.blur and p.blur_bg or p.marine_deep)
+    local msg_bg = p.marine_deep
 
     return {
         MsgArea  = { bg = msg_bg, fg = p.fg_bright },
@@ -10,4 +8,3 @@ return function(p, config)
         ErrorMsg = { fg = p.red, bg = "NONE", bold = true },
     }
 end
-

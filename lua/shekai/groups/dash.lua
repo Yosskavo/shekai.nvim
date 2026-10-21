@@ -1,6 +1,4 @@
 return function(p, config)
-    config = config or { transparent = false, blur = false }
-
     return {
         DashboardHeader           = { fg = p.blue_mid },
         DashboardFooter           = { fg = p.light_purple, bold = true },
@@ -25,4 +23,3 @@ return function(p, config)
         DashKeyQuitHl             = { fg = p.red, bold = true },
     }
 end
-

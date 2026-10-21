@@ -1,11 +1,10 @@
 local M = {}
 
-function M.get_theme(config, colors)
-  config = config or require("shekai").config or { transparent = false, blur = false }
-  colors = colors or require("shekai.colors").get_colors(config)
-  local m_colors = require("shekai.ui_mode").mode_colors
+function M.get_theme(colors)
+  colors = colors or require("shekai.colors").get_colors()
+  local m_colors = require("shekai.ui_mode").get_mode_colors(colors)
 
-  local bg_section = config.transparent and "NONE" or (config.blur and colors.blur_bg or colors.bg_alt)
+  local bg_section = colors.bg_alt
 
   return {
     normal = {
@@ -24,7 +23,7 @@ function M.get_theme(config, colors)
       c = { bg = bg_section, fg = colors.purple_light },
     },
     replace = {
-      a = { bg = m_colors.R or m_colors.r or colors.red, fg = colors.bg_alt, gui = 'bold' },
+      a = { bg = m_colors.R or colors.red, fg = colors.bg_alt, gui = 'bold' },
       b = { bg = bg_section, fg = colors.red },
       c = { bg = bg_section, fg = colors.red },
     },
@@ -43,6 +42,11 @@ function M.get_theme(config, colors)
       b = { bg = bg_section, fg = colors.green_lime },
       c = { bg = bg_section, fg = colors.green_lime },
     },
+    inactive = {
+      a = { bg = colors.bg_dim, fg = colors.fg_muted, gui = 'bold' },
+      b = { bg = colors.bg_dim, fg = colors.fg_muted },
+      c = { bg = colors.bg_dim, fg = colors.fg_muted },
+    },
   }
 end
 
@@ -58,4 +62,3 @@ setmetatable(M, {
 })
 
 return M
-

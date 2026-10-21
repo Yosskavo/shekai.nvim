@@ -1,8 +1,6 @@
 return function(p, config)
-    config = config or { transparent = false, blur = false }
-
-    local bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
-    local results_bg = config.transparent and "NONE" or (config.blur and p.blur_bg or p.bg)
+    local bg = p.bg_alt
+    local results_bg = p.bg
 
     return {
         TelescopePromptNormal  = { fg = p.fg_bright, bg = bg },
@@ -22,5 +20,3 @@ return function(p, config)
         TelescopeBorder        = { fg = p.green_main, bg = results_bg },
     }
 end
-
-

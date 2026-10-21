@@ -1,8 +1,6 @@
 return function(p, config)
-    config = config or { transparent = false, blur = false }
-
-    local active_bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
-    local inactive_bg = config.transparent and "NONE" or (config.blur and p.blur_bg or p.bg_dim)
+    local active_bg = p.bg_alt
+    local inactive_bg = p.bg_dim
 
     return {
         -- NOTE: barbar --
@@ -25,8 +23,8 @@ return function(p, config)
         BufferLineBackground     = { fg = p.fg_muted,  bg = inactive_bg },
         BufferLineBuffer         = { fg = p.fg_muted,  bg = inactive_bg },
 
-        BufferLineFill            = { bg = config.transparent and "NONE" or inactive_bg },
-        BufferLineOffsetSeparator = { bg = config.transparent and "NONE" or inactive_bg },
+        BufferLineFill            = { bg = inactive_bg },
+        BufferLineOffsetSeparator = { bg = inactive_bg },
 
         BufferLineSeparatorSelected = { fg = inactive_bg, bg = active_bg },
         BufferLineSeparatorVisible  = { fg = inactive_bg, bg = inactive_bg },
@@ -47,9 +45,9 @@ return function(p, config)
         BufferLineDuplicateVisible  = { fg = p.rose, bg = inactive_bg },
         BufferLineDuplicate         = { fg = p.rose, bg = inactive_bg },
 
-        BufferLineIconSelected = { bg = p.red },
-        BufferLineIconVisible  = { bg = p.red },
-        BufferLineIcon         = { bg = p.red },
+        BufferLineIconSelected = { bg = active_bg },
+        BufferLineIconVisible  = { bg = inactive_bg },
+        BufferLineIcon         = { bg = inactive_bg },
 
         BufferLineErrorSelected           = { fg = p.red,        bg = active_bg, bold = true },
         BufferLineErrorDiagnosticSelected = { fg = p.red,        bg = active_bg, bold = true },
@@ -80,4 +78,3 @@ return function(p, config)
         BufferLineHintDiagnostic         = { fg = p.green_lime,  bg = inactive_bg },
     }
 end
-

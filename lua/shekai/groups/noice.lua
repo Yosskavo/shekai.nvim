@@ -1,9 +1,6 @@
 return function(p, config)
-    config = config or { transparent = false, blur = false }
-
-    local float_bg = config.transparent and "NONE" or (config.blur and p.blur_float or p.bg_alt)
-    local border_fg = config.blur and p.blur_border or p.blue_accent
-
+    local float_bg = p.bg_alt
+    local border_fg = p.blue_accent
 
     return {
         NoiceCmdline            = { fg = p.fg_bright, bg = float_bg },
@@ -17,4 +14,3 @@ return function(p, config)
         NoicePopupBorder        = { fg = border_fg, bg = float_bg },
     }
 end
-

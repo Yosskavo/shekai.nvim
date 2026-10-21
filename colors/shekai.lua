@@ -1,1 +1,1 @@
-require("shekai").setup()
+require("shekai").load()

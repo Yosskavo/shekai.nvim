@@ -1,6 +1,4 @@
 return function(p, config)
-    config = config or { transparent = false, blur = false }
-
     return {
         ["@module.cpp"]                = { fg = p.module_light, bold = true },
         ["@punctuation.delimiter.cpp"] = { fg = p.punct_light },
@@ -13,4 +11,3 @@ return function(p, config)
         ["@type.builtin.cpp"]          = { fg = p.tokyo_blue, italic = true },
     }
 end
-

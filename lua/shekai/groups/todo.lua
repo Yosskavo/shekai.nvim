@@ -1,6 +1,5 @@
 return function(p, config)
-    config = config or { transparent = false, blur = false }
-    local fg_bg = config.transparent and p.bg or (config.blur and p.blur_bg or p.bg_alt)
+    local fg_bg = p.bg_alt
 
     return {
         TodoBgFIX  = { bg = p.red, fg = fg_bg, bold = true },
@@ -19,4 +18,3 @@ return function(p, config)
         TodoFgTEST = { fg = p.blue_electric or p.violet, bold = true },
     }
 end
-

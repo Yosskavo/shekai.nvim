@@ -1,12 +1,10 @@
--- lua/shekai/groups.lua
-
 local M = {}
+
 function M.get_groups(config, p)
-    config = config or require("shekai").config or { transparent = false, blur = false }
-    p = p or require("shekai.colors").get_colors(config)
+    config = config or require("shekai").config or {}
+    p = p or require("shekai.colors").get_colors()
     local all_highlights = {}
 
-    -- Just list the names of the files in your 'groups' folder here
     local modules = {
         "normal",
         "cursor",
@@ -28,15 +26,15 @@ function M.get_groups(config, p)
         "which-key",
         "man",
         "glance",
-		"blink",
-		"docker",
-		"c",
-		"cpp",
-		"odin",
-		"html",
-		"css",
-		"js",
-		"mini"
+        "blink",
+        "docker",
+        "c",
+        "cpp",
+        "odin",
+        "html",
+        "css",
+        "js",
+        "mini",
     }
 
     for _, mod in ipairs(modules) do
@@ -69,4 +67,3 @@ setmetatable(M, {
 })
 
 return M
-
