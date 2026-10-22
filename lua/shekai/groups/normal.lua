@@ -38,14 +38,29 @@ return function(p, config)
 		DiffChange    = { fg = p.tokyo_orange, bg = p.marine_teal },
 		DiffDelete    = { fg = p.red, bg = p.night_abyss },
 		DiffText      = { fg = p.fg_bright, bg = p.marine_deep, bold = true },
-		GitSignsAdd   = { fg = p.green_main },
-		GitSignsChange = { fg = p.tokyo_orange },
-		GitSignsDelete = { fg = p.red },
 
 		-- Spelling
 		SpellBad      = { sp = p.red, undercurl = true },
 		SpellCap      = { sp = p.light_yellow, undercurl = true },
 		SpellRare     = { sp = p.light_purple, undercurl = true },
 		SpellLocal    = { sp = p.mist_cyan, undercurl = true },
+
+		-- Dressing.nvim
+		DressingInputNormal  = { fg = p.fg_main, bg = p.bg_alt },
+		DressingInputBorder  = { fg = p.blue_accent, bg = p.bg_alt },
+		DressingInputPrompt  = { fg = p.purple_light, bold = true },
+		DressingSelectNormal = { fg = p.fg_main, bg = p.bg_alt },
+		DressingSelectBorder = { fg = p.blue_accent, bg = p.bg_alt },
+
+		-- LazyGit
+		LazyGitBorder = { fg = p.blue_accent, bg = p.bg_alt },
+		LazyGitFloat  = { fg = p.fg_main, bg = p.bg_alt },
+
+		-- Yazi
+		YaziBorder                = { fg = p.blue_accent, bg = p.bg_alt },
+		YaziFloatingWindowNormal  = { fg = p.fg_main, bg = p.bg_alt },
+
+		-- Nvim Surround
+		NvimSurroundHighlight     = { bg = p.visual, fg = p.peach, bold = true },
 	}
 end

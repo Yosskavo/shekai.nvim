@@ -35,6 +35,14 @@ function M.get_groups(config, p)
         "css",
         "js",
         "mini",
+        "gitsigns",
+        "trouble",
+        "mason",
+        "toggleterm",
+        "treesitter-context",
+        "ufo",
+        "grug-far",
+        "harpoon",
     }
 
     for _, mod in ipairs(modules) do

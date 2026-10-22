@@ -3,13 +3,15 @@ return function(p, config)
     local border_fg = p.blue_accent
 
     return {
-        WhichKeyNormal    = { fg = p.fg_main, bg = float_bg },
+        WhichKey          = { fg = p.red },
+        WhichKeyGroup     = { fg = p.magenta_bright },
+        WhichKeySeparator = { fg = p.fg_faint },
+        WhichKeyDesc      = { fg = p.fg_soft },
         WhichKeyFloat     = { fg = p.fg_main, bg = float_bg },
         WhichKeyBorder    = { fg = border_fg, bg = float_bg },
         WhichKeyTitle     = { fg = p.purple_tokyo, bold = true },
-        WhichKeyGroup     = { fg = p.magenta_bright },
-        WhichKeyDesc      = { fg = p.fg_soft },
-        WhichKey          = { fg = p.red },
-        WhichKeySeparator = { fg = p.fg_faint },
+        WhichKeyNormal    = { fg = p.fg_main, bg = float_bg },
+        WhichKeyIcon      = { fg = p.blue_sky },
+        WhichKeyValue     = { fg = p.fg_muted },
     }
 end

@@ -45,6 +45,7 @@ return function(p, config)
         MiniFilesTitleFocused      = { fg = p.gold, bold = true },
 
         MiniIndentscopeSymbol      = { fg = p.purple_tokyo },
+        MiniIndentscopePrefix      = { nocombine = true },
         MiniJump                   = { bg = p.amber, fg = p.bg_alt, bold = true },
 
         MiniPickBorder             = { fg = border_fg, bg = float_bg },
