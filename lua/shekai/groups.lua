@@ -43,6 +43,9 @@ function M.get_groups(config, p)
         "ufo",
         "grug-far",
         "harpoon",
+	"json",
+	"yaml",
+	"toml"
     }
 
     for _, mod in ipairs(modules) do
