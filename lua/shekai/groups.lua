@@ -45,7 +45,14 @@ function M.get_groups(config, p)
         "harpoon",
 	"json",
 	"yaml",
-	"toml"
+	"toml",
+	"shell",
+	"python",
+	"go",
+	"zig",
+	"lua",
+	"d",
+	"java"
     }
 
     for _, mod in ipairs(modules) do
